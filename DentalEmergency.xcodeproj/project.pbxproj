@@ -1,0 +1,635 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3B0B22DD1F3CB40100987599 /* SelectedOfficesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0B22DC1F3CB40100987599 /* SelectedOfficesTableViewCell.swift */; };
+		3B0D436D1F40F6B4001E01D1 /* viewControllerConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0D436C1F40F6B4001E01D1 /* viewControllerConstant.swift */; };
+		3B0F5E821F26FB810043C5C3 /* viewUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0F5E811F26FB7E0043C5C3 /* viewUtility.swift */; };
+		3B0F5E841F2C6A100043C5C3 /* ReviewTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0F5E831F2C6A0E0043C5C3 /* ReviewTableViewController.swift */; };
+		3B0F5E861F2C6A730043C5C3 /* SelectedOfficesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0F5E851F2C6A730043C5C3 /* SelectedOfficesTableViewController.swift */; };
+		3B0F5E881F2C6B140043C5C3 /* DirectionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0F5E871F2C6B140043C5C3 /* DirectionsViewController.swift */; };
+		3B0FFCFF1F33E4C200DC6D26 /* ReviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0FFCFE1F33E4C200DC6D26 /* ReviewTableViewCell.swift */; };
+		3B1BDE2F1F48E4E9002BB75C /* Selected.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3B1BDE2D1F48E4E9002BB75C /* Selected.xcdatamodeld */; };
+		3B1BDE321F48E5EC002BB75C /* MySelectedOffices+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1BDE301F48E5EC002BB75C /* MySelectedOffices+CoreDataClass.swift */; };
+		3B1BDE331F48E5EC002BB75C /* MySelectedOffices+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1BDE311F48E5EC002BB75C /* MySelectedOffices+CoreDataProperties.swift */; };
+		3B1BDE351F491220002BB75C /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1BDE341F491220002BB75C /* CoreDataStack.swift */; };
+		3B1BDE371F49E022002BB75C /* DentalEmergencyCoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1BDE361F49E022002BB75C /* DentalEmergencyCoreData.swift */; };
+		3B4CDF731F229AF200F84705 /* DataStrcuture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4CDF721F229AF000F84705 /* DataStrcuture.swift */; };
+		3B4CDF761F22B68600F84705 /* PracticeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4CDF751F22B68600F84705 /* PracticeDetailViewController.swift */; };
+		3B4CDF781F22C57D00F84705 /* GoogleSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4CDF771F22C57C00F84705 /* GoogleSearch.swift */; };
+		3BF2612C1F1FCDF000C9A6D4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF2612B1F1FCDF000C9A6D4 /* AppDelegate.swift */; };
+		3BF2612E1F1FCDF000C9A6D4 /* NearByOfficesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF2612D1F1FCDF000C9A6D4 /* NearByOfficesViewController.swift */; };
+		3BF261311F1FCDF000C9A6D4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3BF2612F1F1FCDF000C9A6D4 /* Main.storyboard */; };
+		3BF261331F1FCDF000C9A6D4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3BF261321F1FCDF000C9A6D4 /* Assets.xcassets */; };
+		3BF261361F1FCDF000C9A6D4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3BF261341F1FCDF000C9A6D4 /* LaunchScreen.storyboard */; };
+		3BF261411F1FCDF100C9A6D4 /* DentalEmergencyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF261401F1FCDF100C9A6D4 /* DentalEmergencyTests.swift */; };
+		3BF2614C1F1FCDF100C9A6D4 /* DentalEmergencyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF2614B1F1FCDF100C9A6D4 /* DentalEmergencyUITests.swift */; };
+		3BF2615E1F1FF93200C9A6D4 /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF2615D1F1FF93200C9A6D4 /* NetworkRequest.swift */; };
+		3BF261601F1FF99100C9A6D4 /* GoogleConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF2615F1F1FF99100C9A6D4 /* GoogleConstant.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3BF2613D1F1FCDF100C9A6D4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3BF261201F1FCDEF00C9A6D4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3BF261271F1FCDEF00C9A6D4;
+			remoteInfo = DentalEmergency;
+		};
+		3BF261481F1FCDF100C9A6D4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3BF261201F1FCDEF00C9A6D4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3BF261271F1FCDEF00C9A6D4;
+			remoteInfo = DentalEmergency;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		3B0B22DC1F3CB40100987599 /* SelectedOfficesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectedOfficesTableViewCell.swift; sourceTree = "<group>"; };
+		3B0D436C1F40F6B4001E01D1 /* viewControllerConstant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = viewControllerConstant.swift; sourceTree = "<group>"; };
+		3B0F5E811F26FB7E0043C5C3 /* viewUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = viewUtility.swift; sourceTree = "<group>"; };
+		3B0F5E831F2C6A0E0043C5C3 /* ReviewTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewTableViewController.swift; sourceTree = "<group>"; };
+		3B0F5E851F2C6A730043C5C3 /* SelectedOfficesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectedOfficesTableViewController.swift; sourceTree = "<group>"; };
+		3B0F5E871F2C6B140043C5C3 /* DirectionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DirectionsViewController.swift; sourceTree = "<group>"; };
+		3B0FFCFE1F33E4C200DC6D26 /* ReviewTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewTableViewCell.swift; sourceTree = "<group>"; };
+		3B1BDE2E1F48E4E9002BB75C /* Selected.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Selected.xcdatamodel; sourceTree = "<group>"; };
+		3B1BDE301F48E5EC002BB75C /* MySelectedOffices+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; name = "MySelectedOffices+CoreDataClass.swift"; path = "../MySelectedOffices+CoreDataClass.swift"; sourceTree = "<group>"; };
+		3B1BDE311F48E5EC002BB75C /* MySelectedOffices+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "MySelectedOffices+CoreDataProperties.swift"; path = "../MySelectedOffices+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		3B1BDE341F491220002BB75C /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		3B1BDE361F49E022002BB75C /* DentalEmergencyCoreData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DentalEmergencyCoreData.swift; sourceTree = "<group>"; };
+		3B4CDF721F229AF000F84705 /* DataStrcuture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataStrcuture.swift; sourceTree = "<group>"; };
+		3B4CDF751F22B68600F84705 /* PracticeDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PracticeDetailViewController.swift; sourceTree = "<group>"; };
+		3B4CDF771F22C57C00F84705 /* GoogleSearch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleSearch.swift; sourceTree = "<group>"; };
+		3BF261281F1FCDF000C9A6D4 /* DentalEmergency.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DentalEmergency.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3BF2612B1F1FCDF000C9A6D4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		3BF2612D1F1FCDF000C9A6D4 /* NearByOfficesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearByOfficesViewController.swift; sourceTree = "<group>"; };
+		3BF261301F1FCDF000C9A6D4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		3BF261321F1FCDF000C9A6D4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3BF261351F1FCDF000C9A6D4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		3BF261371F1FCDF000C9A6D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3BF2613C1F1FCDF100C9A6D4 /* DentalEmergencyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DentalEmergencyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3BF261401F1FCDF100C9A6D4 /* DentalEmergencyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DentalEmergencyTests.swift; sourceTree = "<group>"; };
+		3BF261421F1FCDF100C9A6D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3BF261471F1FCDF100C9A6D4 /* DentalEmergencyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DentalEmergencyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3BF2614B1F1FCDF100C9A6D4 /* DentalEmergencyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DentalEmergencyUITests.swift; sourceTree = "<group>"; };
+		3BF2614D1F1FCDF100C9A6D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3BF2615D1F1FF93200C9A6D4 /* NetworkRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
+		3BF2615F1F1FF99100C9A6D4 /* GoogleConstant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleConstant.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3BF261251F1FCDEF00C9A6D4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3BF261391F1FCDF100C9A6D4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3BF261441F1FCDF100C9A6D4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3B1BDE2C1F48E486002BB75C /* DataModel */ = {
+			isa = PBXGroup;
+			children = (
+				3B1BDE341F491220002BB75C /* CoreDataStack.swift */,
+				3B1BDE361F49E022002BB75C /* DentalEmergencyCoreData.swift */,
+				3B1BDE301F48E5EC002BB75C /* MySelectedOffices+CoreDataClass.swift */,
+				3B1BDE311F48E5EC002BB75C /* MySelectedOffices+CoreDataProperties.swift */,
+				3B1BDE2D1F48E4E9002BB75C /* Selected.xcdatamodeld */,
+			);
+			name = DataModel;
+			sourceTree = "<group>";
+		};
+		3B4CDF741F22B5F500F84705 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				3BF2612D1F1FCDF000C9A6D4 /* NearByOfficesViewController.swift */,
+				3B4CDF751F22B68600F84705 /* PracticeDetailViewController.swift */,
+				3B0F5E811F26FB7E0043C5C3 /* viewUtility.swift */,
+				3B0F5E831F2C6A0E0043C5C3 /* ReviewTableViewController.swift */,
+				3B0F5E851F2C6A730043C5C3 /* SelectedOfficesTableViewController.swift */,
+				3B0F5E871F2C6B140043C5C3 /* DirectionsViewController.swift */,
+				3B0FFCFE1F33E4C200DC6D26 /* ReviewTableViewCell.swift */,
+				3B0B22DC1F3CB40100987599 /* SelectedOfficesTableViewCell.swift */,
+				3B0D436C1F40F6B4001E01D1 /* viewControllerConstant.swift */,
+			);
+			name = ViewController;
+			sourceTree = "<group>";
+		};
+		3BF2611F1F1FCDEF00C9A6D4 = {
+			isa = PBXGroup;
+			children = (
+				3BF2612A1F1FCDF000C9A6D4 /* DentalEmergency */,
+				3BF2613F1F1FCDF100C9A6D4 /* DentalEmergencyTests */,
+				3BF2614A1F1FCDF100C9A6D4 /* DentalEmergencyUITests */,
+				3BF261291F1FCDF000C9A6D4 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3BF261291F1FCDF000C9A6D4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3BF261281F1FCDF000C9A6D4 /* DentalEmergency.app */,
+				3BF2613C1F1FCDF100C9A6D4 /* DentalEmergencyTests.xctest */,
+				3BF261471F1FCDF100C9A6D4 /* DentalEmergencyUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3BF2612A1F1FCDF000C9A6D4 /* DentalEmergency */ = {
+			isa = PBXGroup;
+			children = (
+				3B1BDE2C1F48E486002BB75C /* DataModel */,
+				3B4CDF741F22B5F500F84705 /* ViewController */,
+				3BF261591F1FF7E800C9A6D4 /* NetworkService */,
+				3BF2612B1F1FCDF000C9A6D4 /* AppDelegate.swift */,
+				3B4CDF721F229AF000F84705 /* DataStrcuture.swift */,
+				3BF2612F1F1FCDF000C9A6D4 /* Main.storyboard */,
+				3BF261321F1FCDF000C9A6D4 /* Assets.xcassets */,
+				3BF261341F1FCDF000C9A6D4 /* LaunchScreen.storyboard */,
+				3BF261371F1FCDF000C9A6D4 /* Info.plist */,
+			);
+			path = DentalEmergency;
+			sourceTree = "<group>";
+		};
+		3BF2613F1F1FCDF100C9A6D4 /* DentalEmergencyTests */ = {
+			isa = PBXGroup;
+			children = (
+				3BF261401F1FCDF100C9A6D4 /* DentalEmergencyTests.swift */,
+				3BF261421F1FCDF100C9A6D4 /* Info.plist */,
+			);
+			path = DentalEmergencyTests;
+			sourceTree = "<group>";
+		};
+		3BF2614A1F1FCDF100C9A6D4 /* DentalEmergencyUITests */ = {
+			isa = PBXGroup;
+			children = (
+				3BF2614B1F1FCDF100C9A6D4 /* DentalEmergencyUITests.swift */,
+				3BF2614D1F1FCDF100C9A6D4 /* Info.plist */,
+			);
+			path = DentalEmergencyUITests;
+			sourceTree = "<group>";
+		};
+		3BF261591F1FF7E800C9A6D4 /* NetworkService */ = {
+			isa = PBXGroup;
+			children = (
+				3BF2615D1F1FF93200C9A6D4 /* NetworkRequest.swift */,
+				3BF2615F1F1FF99100C9A6D4 /* GoogleConstant.swift */,
+				3B4CDF771F22C57C00F84705 /* GoogleSearch.swift */,
+			);
+			name = NetworkService;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3BF261271F1FCDEF00C9A6D4 /* DentalEmergency */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3BF261501F1FCDF100C9A6D4 /* Build configuration list for PBXNativeTarget "DentalEmergency" */;
+			buildPhases = (
+				3BF261241F1FCDEF00C9A6D4 /* Sources */,
+				3BF261251F1FCDEF00C9A6D4 /* Frameworks */,
+				3BF261261F1FCDEF00C9A6D4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DentalEmergency;
+			productName = DentalEmergency;
+			productReference = 3BF261281F1FCDF000C9A6D4 /* DentalEmergency.app */;
+			productType = "com.apple.product-type.application";
+		};
+		3BF2613B1F1FCDF100C9A6D4 /* DentalEmergencyTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3BF261531F1FCDF100C9A6D4 /* Build configuration list for PBXNativeTarget "DentalEmergencyTests" */;
+			buildPhases = (
+				3BF261381F1FCDF100C9A6D4 /* Sources */,
+				3BF261391F1FCDF100C9A6D4 /* Frameworks */,
+				3BF2613A1F1FCDF100C9A6D4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3BF2613E1F1FCDF100C9A6D4 /* PBXTargetDependency */,
+			);
+			name = DentalEmergencyTests;
+			productName = DentalEmergencyTests;
+			productReference = 3BF2613C1F1FCDF100C9A6D4 /* DentalEmergencyTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		3BF261461F1FCDF100C9A6D4 /* DentalEmergencyUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3BF261561F1FCDF100C9A6D4 /* Build configuration list for PBXNativeTarget "DentalEmergencyUITests" */;
+			buildPhases = (
+				3BF261431F1FCDF100C9A6D4 /* Sources */,
+				3BF261441F1FCDF100C9A6D4 /* Frameworks */,
+				3BF261451F1FCDF100C9A6D4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3BF261491F1FCDF100C9A6D4 /* PBXTargetDependency */,
+			);
+			name = DentalEmergencyUITests;
+			productName = DentalEmergencyUITests;
+			productReference = 3BF261471F1FCDF100C9A6D4 /* DentalEmergencyUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3BF261201F1FCDEF00C9A6D4 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 0820;
+				TargetAttributes = {
+					3BF261271F1FCDEF00C9A6D4 = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+					};
+					3BF2613B1F1FCDF100C9A6D4 = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 3BF261271F1FCDEF00C9A6D4;
+					};
+					3BF261461F1FCDF100C9A6D4 = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 3BF261271F1FCDEF00C9A6D4;
+					};
+				};
+			};
+			buildConfigurationList = 3BF261231F1FCDEF00C9A6D4 /* Build configuration list for PBXProject "DentalEmergency" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 3BF2611F1F1FCDEF00C9A6D4;
+			productRefGroup = 3BF261291F1FCDF000C9A6D4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3BF261271F1FCDEF00C9A6D4 /* DentalEmergency */,
+				3BF2613B1F1FCDF100C9A6D4 /* DentalEmergencyTests */,
+				3BF261461F1FCDF100C9A6D4 /* DentalEmergencyUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3BF261261F1FCDEF00C9A6D4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3BF261361F1FCDF000C9A6D4 /* LaunchScreen.storyboard in Resources */,
+				3BF261331F1FCDF000C9A6D4 /* Assets.xcassets in Resources */,
+				3BF261311F1FCDF000C9A6D4 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3BF2613A1F1FCDF100C9A6D4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3BF261451F1FCDF100C9A6D4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3BF261241F1FCDEF00C9A6D4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3BF261601F1FF99100C9A6D4 /* GoogleConstant.swift in Sources */,
+				3B0F5E821F26FB810043C5C3 /* viewUtility.swift in Sources */,
+				3B1BDE321F48E5EC002BB75C /* MySelectedOffices+CoreDataClass.swift in Sources */,
+				3B1BDE351F491220002BB75C /* CoreDataStack.swift in Sources */,
+				3B4CDF731F229AF200F84705 /* DataStrcuture.swift in Sources */,
+				3BF2612E1F1FCDF000C9A6D4 /* NearByOfficesViewController.swift in Sources */,
+				3B0F5E881F2C6B140043C5C3 /* DirectionsViewController.swift in Sources */,
+				3B1BDE331F48E5EC002BB75C /* MySelectedOffices+CoreDataProperties.swift in Sources */,
+				3B0F5E861F2C6A730043C5C3 /* SelectedOfficesTableViewController.swift in Sources */,
+				3B1BDE371F49E022002BB75C /* DentalEmergencyCoreData.swift in Sources */,
+				3B0FFCFF1F33E4C200DC6D26 /* ReviewTableViewCell.swift in Sources */,
+				3B0D436D1F40F6B4001E01D1 /* viewControllerConstant.swift in Sources */,
+				3B0F5E841F2C6A100043C5C3 /* ReviewTableViewController.swift in Sources */,
+				3B0B22DD1F3CB40100987599 /* SelectedOfficesTableViewCell.swift in Sources */,
+				3B4CDF781F22C57D00F84705 /* GoogleSearch.swift in Sources */,
+				3B4CDF761F22B68600F84705 /* PracticeDetailViewController.swift in Sources */,
+				3BF2615E1F1FF93200C9A6D4 /* NetworkRequest.swift in Sources */,
+				3BF2612C1F1FCDF000C9A6D4 /* AppDelegate.swift in Sources */,
+				3B1BDE2F1F48E4E9002BB75C /* Selected.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3BF261381F1FCDF100C9A6D4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3BF261411F1FCDF100C9A6D4 /* DentalEmergencyTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3BF261431F1FCDF100C9A6D4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3BF2614C1F1FCDF100C9A6D4 /* DentalEmergencyUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3BF2613E1F1FCDF100C9A6D4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3BF261271F1FCDEF00C9A6D4 /* DentalEmergency */;
+			targetProxy = 3BF2613D1F1FCDF100C9A6D4 /* PBXContainerItemProxy */;
+		};
+		3BF261491F1FCDF100C9A6D4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3BF261271F1FCDEF00C9A6D4 /* DentalEmergency */;
+			targetProxy = 3BF261481F1FCDF100C9A6D4 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		3BF2612F1F1FCDF000C9A6D4 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3BF261301F1FCDF000C9A6D4 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		3BF261341F1FCDF000C9A6D4 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3BF261351F1FCDF000C9A6D4 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3BF2614E1F1FCDF100C9A6D4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		3BF2614F1F1FCDF100C9A6D4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3BF261511F1FCDF100C9A6D4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = DentalEmergency/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ddstown.DentalEmergency;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		3BF261521F1FCDF100C9A6D4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = DentalEmergency/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ddstown.DentalEmergency;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		3BF261541F1FCDF100C9A6D4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = DentalEmergencyTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ddstown.DentalEmergencyTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DentalEmergency.app/DentalEmergency";
+			};
+			name = Debug;
+		};
+		3BF261551F1FCDF100C9A6D4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = DentalEmergencyTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ddstown.DentalEmergencyTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DentalEmergency.app/DentalEmergency";
+			};
+			name = Release;
+		};
+		3BF261571F1FCDF100C9A6D4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = DentalEmergencyUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ddstown.DentalEmergencyUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = DentalEmergency;
+			};
+			name = Debug;
+		};
+		3BF261581F1FCDF100C9A6D4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = DentalEmergencyUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ddstown.DentalEmergencyUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = DentalEmergency;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3BF261231F1FCDEF00C9A6D4 /* Build configuration list for PBXProject "DentalEmergency" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3BF2614E1F1FCDF100C9A6D4 /* Debug */,
+				3BF2614F1F1FCDF100C9A6D4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3BF261501F1FCDF100C9A6D4 /* Build configuration list for PBXNativeTarget "DentalEmergency" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3BF261511F1FCDF100C9A6D4 /* Debug */,
+				3BF261521F1FCDF100C9A6D4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3BF261531F1FCDF100C9A6D4 /* Build configuration list for PBXNativeTarget "DentalEmergencyTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3BF261541F1FCDF100C9A6D4 /* Debug */,
+				3BF261551F1FCDF100C9A6D4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3BF261561F1FCDF100C9A6D4 /* Build configuration list for PBXNativeTarget "DentalEmergencyUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3BF261571F1FCDF100C9A6D4 /* Debug */,
+				3BF261581F1FCDF100C9A6D4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		3B1BDE2D1F48E4E9002BB75C /* Selected.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				3B1BDE2E1F48E4E9002BB75C /* Selected.xcdatamodel */,
+			);
+			currentVersion = 3B1BDE2E1F48E4E9002BB75C /* Selected.xcdatamodel */;
+			path = Selected.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 3BF261201F1FCDEF00C9A6D4 /* Project object */;
+}
