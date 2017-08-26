@@ -95,11 +95,12 @@ class DirectionsViewController: UIViewController, MKMapViewDelegate {
                 self.activityIndicator.stopAnimating()
                 DispatchQueue.main.async() {
                     if let  unwrappedResponse = response {
+                        self.setMapRegion( sourceLocation: self.myLocation!, destinationLocation: officeLocation! )
                         self.mapView.add(unwrappedResponse.routes[0].polyline)
-                        var boundingRegion = unwrappedResponse.routes[0].polyline.boundingMapRect
-                        boundingRegion.size.height = boundingRegion.size.height*1.2
-                        boundingRegion.size.width = boundingRegion.size.width*1.2
-                        self.mapView.setVisibleMapRect(boundingRegion, animated: true)
+                      //  var boundingRegion = unwrappedResponse.routes[0].polyline.boundingMapRect
+                      //  boundingRegion.size.height = boundingRegion.size.height*1.2
+                      //  boundingRegion.size.width = boundingRegion.size.width*1.2
+                       // self.mapView.setVisibleMapRect(boundingRegion, animated: true)
                     }
                 }
             }
@@ -186,7 +187,45 @@ class DirectionsViewController: UIViewController, MKMapViewDelegate {
             }
         }
     }
-    
+   
+    func setMapRegion( sourceLocation: PracticePinAnnotation, destinationLocation: PracticePinAnnotation ) {
+        
+        var minLat: Double = 0.0
+        var minLng: Double = 0.0
+        var maxLat: Double = 0.0
+        var maxLng: Double = 0.0
+
+        if sourceLocation.coordinate.latitude >= destinationLocation.coordinate.latitude {
+            minLat = destinationLocation.coordinate.latitude
+            maxLat = sourceLocation.coordinate.latitude
+        } else {
+            minLat = sourceLocation.coordinate.latitude
+            maxLat = destinationLocation.coordinate.latitude
+        }
+       
+        if sourceLocation.coordinate.longitude >= destinationLocation.coordinate.longitude {
+            minLng = destinationLocation.coordinate.longitude
+            maxLng = sourceLocation.coordinate.longitude
+        } else {
+            maxLng = destinationLocation.coordinate.longitude
+            minLng = sourceLocation.coordinate.longitude
+        }
+
+        let deltaLat = maxLat - minLat
+        let deltaLng = maxLng - minLng
+        
+        let midLat = (minLat+maxLat)/2
+        let midLng = (minLng+maxLng)/2
+        
+        let selectedDelta = max(deltaLat, deltaLng) + max(deltaLat, deltaLng)*1.85
+        
+        let center = CLLocationCoordinate2D(latitude: midLat, longitude: midLng)
+        
+        let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: selectedDelta, longitudeDelta: selectedDelta))
+        
+        self.mapView.setRegion(region, animated: true)
+        print("selctedDltae: \(selectedDelta) - lat: \(midLat) and lng: \(midLng)")
+    }
 }
 
 
