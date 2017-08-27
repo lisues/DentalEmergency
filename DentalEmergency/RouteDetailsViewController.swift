@@ -1,5 +1,5 @@
 //
-//  RouteOptionViewController.swift
+//  RouteDetailsViewController.swift
 //  DentalEmergency
 //
 //  Created by Robert Alavi on 8/26/17.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RouteOptionViewController: UIViewController {
+class RouteDetailsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
