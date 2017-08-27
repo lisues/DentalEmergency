@@ -185,6 +185,24 @@
             </objects>
             <point key="canvasLocation" x="-703" y="72"/>
         </scene>
+        <!--Route Details View Controller-->
+        <scene sceneID="WGM-td-lK6">
+            <objects>
+                <viewController storyboardIdentifier="RouteDetailsViewController" id="kyO-Fh-n8h" customClass="RouteDetailsViewController" customModule="DentalEmergency" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Mhf-4x-Iyl"/>
+                        <viewControllerLayoutGuide type="bottom" id="ZCB-ld-Uj8"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="A28-Ou-736">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xgM-oF-eao" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2484" y="982"/>
+        </scene>
         <!--Practice Detail View Controller-->
         <scene sceneID="8Ze-yc-KEA">
             <objects>
@@ -264,16 +282,16 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="6zc-Qz-t0u" userLabel="rating">
-                                                                <rect key="frame" x="0.0" y="0.0" width="375" height="37.5"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="375" height="38"/>
                                                                 <subviews>
                                                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XmZ-h6-heC">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="90" height="37.5"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="90" height="38"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="width" constant="90" id="IKe-gv-AFO"/>
                                                                         </constraints>
                                                                     </imageView>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Coi-yM-CVA">
-                                                                        <rect key="frame" x="100" y="0.0" width="80" height="37.5"/>
+                                                                        <rect key="frame" x="100" y="0.0" width="80" height="38"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="width" constant="80" id="Ue8-yi-sla"/>
                                                                         </constraints>
@@ -282,7 +300,7 @@
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="openNow" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qM6-cQ-tYE">
-                                                                        <rect key="frame" x="190" y="0.0" width="185" height="37.5"/>
+                                                                        <rect key="frame" x="190" y="0.0" width="185" height="38"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                                         <color key="textColor" red="0.71624228395061729" green="0.14908933257538612" blue="0.17165243395697063" alpha="0.79000000000000004" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <nil key="highlightedColor"/>
@@ -293,10 +311,10 @@
                                                                 </constraints>
                                                             </stackView>
                                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="te1-ni-9QU" userLabel="officePhone">
-                                                                <rect key="frame" x="0.0" y="37.5" width="375" height="37.5"/>
+                                                                <rect key="frame" x="0.0" y="38" width="375" height="37"/>
                                                                 <subviews>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1RV-Tb-oF8">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="150" height="37.5"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="150" height="37"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="width" constant="150" id="oNq-65-rZe"/>
                                                                         </constraints>
@@ -306,7 +324,7 @@
                                                                         </connections>
                                                                     </button>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iKj-Hn-P9u">
-                                                                        <rect key="frame" x="156" y="0.0" width="219" height="37.5"/>
+                                                                        <rect key="frame" x="156" y="0.0" width="219" height="37"/>
                                                                         <state key="normal" title="1-888-888-8888"/>
                                                                         <connections>
                                                                             <action selector="callOfficeWithNumber:" destination="1zU-Xn-a86" eventType="touchUpInside" id="Ynw-Hx-I76"/>
@@ -315,10 +333,10 @@
                                                                 </subviews>
                                                             </stackView>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="iIL-cG-Vba" userLabel="officeWebsite">
-                                                                <rect key="frame" x="0.0" y="75" width="375" height="37.5"/>
+                                                                <rect key="frame" x="0.0" y="75" width="375" height="38"/>
                                                                 <subviews>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rGS-y5-L4o">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="375" height="37.5"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="375" height="38"/>
                                                                         <state key="normal" title="url://www.ddstown.com"/>
                                                                         <connections>
                                                                             <action selector="goToOfficeWebsite:" destination="1zU-Xn-a86" eventType="touchUpInside" id="EEn-3i-roQ"/>
@@ -327,10 +345,10 @@
                                                                 </subviews>
                                                             </stackView>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="17S-xc-lgl" userLabel="officeAddress">
-                                                                <rect key="frame" x="0.0" y="112.5" width="375" height="37.5"/>
+                                                                <rect key="frame" x="0.0" y="113" width="375" height="37"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="officeAddress" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZWw-Bj-s40">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="375" height="37.5"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="375" height="37"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                                         <color key="textColor" red="0.25079782824933683" green="0.25079782824933683" blue="0.25079782824933683" alpha="0.78688171012269936" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <nil key="highlightedColor"/>
@@ -349,16 +367,16 @@
                                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="229"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Office Hours:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pRk-oE-A73">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="375" height="28.5"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="375" height="29"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                                         <color key="textColor" red="0.0" green="0.45325761959876543" blue="0.71624228395061729" alpha="0.79000000000000004" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Amx-Y8-7D6" userLabel="Monday">
-                                                                        <rect key="frame" x="0.0" y="28.5" width="375" height="29"/>
+                                                                        <rect key="frame" x="0.0" y="29" width="375" height="28"/>
                                                                         <subviews>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Monday" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9ke-1w-zoW">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="375" height="29"/>
+                                                                                <rect key="frame" x="0.0" y="0.0" width="375" height="28"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="width" constant="110" id="GUm-ke-6t1"/>
                                                                                 </constraints>
@@ -369,10 +387,10 @@
                                                                         </subviews>
                                                                     </stackView>
                                                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wn5-1M-g4t" userLabel="Tuesday">
-                                                                        <rect key="frame" x="0.0" y="57.5" width="375" height="28.5"/>
+                                                                        <rect key="frame" x="0.0" y="57" width="375" height="29"/>
                                                                         <subviews>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tuesday" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tte-iv-WBa">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="375" height="28.5"/>
+                                                                                <rect key="frame" x="0.0" y="0.0" width="375" height="29"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="width" constant="110" id="3He-M4-jfL"/>
                                                                                 </constraints>
@@ -383,10 +401,10 @@
                                                                         </subviews>
                                                                     </stackView>
                                                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gVI-AT-va3" userLabel="Wednesday">
-                                                                        <rect key="frame" x="0.0" y="86" width="375" height="28.5"/>
+                                                                        <rect key="frame" x="0.0" y="86" width="375" height="29"/>
                                                                         <subviews>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wednesday" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FnV-wu-0m1">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="375" height="28.5"/>
+                                                                                <rect key="frame" x="0.0" y="0.0" width="375" height="29"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="width" constant="110" id="fgu-Jf-LJC"/>
                                                                                 </constraints>
@@ -397,10 +415,10 @@
                                                                         </subviews>
                                                                     </stackView>
                                                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xzG-G8-tqV" userLabel="Thursday">
-                                                                        <rect key="frame" x="0.0" y="114.5" width="375" height="28.5"/>
+                                                                        <rect key="frame" x="0.0" y="115" width="375" height="28"/>
                                                                         <subviews>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thursday" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AHT-kn-JVR">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="375" height="28.5"/>
+                                                                                <rect key="frame" x="0.0" y="0.0" width="375" height="28"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="width" constant="110" id="DUe-In-FNV"/>
                                                                                 </constraints>
@@ -425,10 +443,10 @@
                                                                         </subviews>
                                                                     </stackView>
                                                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R0W-3u-7Pg" userLabel="Saturday">
-                                                                        <rect key="frame" x="0.0" y="172" width="375" height="28.5"/>
+                                                                        <rect key="frame" x="0.0" y="172" width="375" height="28"/>
                                                                         <subviews>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Saturday" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dft-RM-KPW">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="375" height="28.5"/>
+                                                                                <rect key="frame" x="0.0" y="0.0" width="375" height="28"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="width" constant="110" id="CRm-TK-v3q"/>
                                                                                 </constraints>
@@ -439,10 +457,10 @@
                                                                         </subviews>
                                                                     </stackView>
                                                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZzZ-eq-wXf" userLabel="Sunday">
-                                                                        <rect key="frame" x="0.0" y="200.5" width="375" height="28.5"/>
+                                                                        <rect key="frame" x="0.0" y="200" width="375" height="29"/>
                                                                         <subviews>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sunday" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CAj-X8-A8G">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="375" height="28.5"/>
+                                                                                <rect key="frame" x="0.0" y="0.0" width="375" height="29"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="width" constant="110" id="obS-5l-b8c"/>
                                                                                 </constraints>
@@ -750,7 +768,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Eep-yR-uvq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3188" y="804.64767616191909"/>
+            <point key="canvasLocation" x="2484" y="170"/>
         </scene>
     </scenes>
     <resources>
