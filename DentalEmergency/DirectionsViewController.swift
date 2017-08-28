@@ -20,7 +20,9 @@ class DirectionsViewController: UIViewController, MKMapViewDelegate {
     var annotations = [PracticePinAnnotation]()
     
     var activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView()
+   
     
+    @IBOutlet weak var miles: UILabel!
     @IBOutlet weak var mapView: MKMapView!
     
     override func viewDidLoad() {
@@ -93,9 +95,13 @@ class DirectionsViewController: UIViewController, MKMapViewDelegate {
                 }
             } else {
                 self.activityIndicator.stopAnimating()
+
                 DispatchQueue.main.async() {
                     if let  unwrappedResponse = response {
+                        self.miles.backgroundColor = UIColor.blue
+        self.showRoute( unwrappedResponse )
                         self.setMapRegion( sourceLocation: self.myLocation!, destinationLocation: officeLocation! )
+                        self.miles.text = "\(unwrappedResponse.routes[0].distance * 0.000621371) miles"
                         self.mapView.add(unwrappedResponse.routes[0].polyline)
                       //  var boundingRegion = unwrappedResponse.routes[0].polyline.boundingMapRect
                       //  boundingRegion.size.height = boundingRegion.size.height*1.2
@@ -180,6 +186,8 @@ class DirectionsViewController: UIViewController, MKMapViewDelegate {
 
     func showRoute(_ response: MKDirectionsResponse) {
         for route in response.routes {
+  print("-------------------------")
+  print("route: \(route)")
             mapView.add(route.polyline,
                          level: MKOverlayLevel.aboveRoads)
             for step in route.steps {

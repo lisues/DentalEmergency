@@ -748,9 +748,23 @@
                                             </navigationItem>
                                         </items>
                                     </navigationBar>
-                                    <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="LLN-iL-X7N">
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="JQn-pY-KeX">
                                         <rect key="frame" x="0.0" y="45" width="375" height="602"/>
-                                    </mapView>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Miles" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ywl-uR-war">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="FgP-nh-MjW"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" red="1" green="0.1858398375116872" blue="0.10926747738750631" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="LLN-iL-X7N">
+                                                <rect key="frame" x="0.0" y="40" width="375" height="562"/>
+                                            </mapView>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
                             </stackView>
                         </subviews>
@@ -764,6 +778,7 @@
                     </view>
                     <connections>
                         <outlet property="mapView" destination="LLN-iL-X7N" id="gkL-iJ-Y6i"/>
+                        <outlet property="miles" destination="ywl-uR-war" id="xYh-p7-ZVc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Eep-yR-uvq" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -21,6 +21,9 @@ class RouteDetailsViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func addTempFunctionGitHubProblem() {
+        //testing on github activities
+    }
     /*
     // MARK: - Navigation
 
