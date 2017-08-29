@@ -752,16 +752,16 @@
                                         <rect key="frame" x="0.0" y="45" width="375" height="602"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Miles" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ywl-uR-war">
-                                                <rect key="frame" x="0.0" y="0.0" width="375" height="40"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="55"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="40" id="FgP-nh-MjW"/>
+                                                    <constraint firstAttribute="height" constant="55" id="XtK-AT-G9T"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <color key="textColor" red="1" green="0.1858398375116872" blue="0.10926747738750631" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="LLN-iL-X7N">
-                                                <rect key="frame" x="0.0" y="40" width="375" height="562"/>
+                                                <rect key="frame" x="0.0" y="55" width="375" height="547"/>
                                             </mapView>
                                         </subviews>
                                     </stackView>

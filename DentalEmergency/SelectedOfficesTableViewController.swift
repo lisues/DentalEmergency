@@ -68,7 +68,7 @@ class SelectedOfficesTableViewController: UIViewController, UITableViewDataSourc
             } else {
                 cell.officePhoto.image = UIImage(named: "default")
             }
-            cell.officeName.text = selectedOffice.name
+            cell.officeName.text = "       \(selectedOffice.name)"
         }
        
         return cell

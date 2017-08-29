@@ -121,7 +121,8 @@ class ReviewTableViewController: UIViewController, UITableViewDataSource, UITabl
         }
  
         if self.selectedRowIndex == (indexPath as NSIndexPath).row {
-            cell?.backgroundColor = UIColor.lightGray
+            //cell?.backgroundColor = UIColor.lightGray
+            cell?.backgroundColor =  UIColor(red: 0.949, green: 0.949, blue: 0.949, alpha: 1.0)
         } else {
             cell?.backgroundColor = UIColor.white
         }

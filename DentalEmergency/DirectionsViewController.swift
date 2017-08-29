@@ -98,10 +98,13 @@ class DirectionsViewController: UIViewController, MKMapViewDelegate {
 
                 DispatchQueue.main.async() {
                     if let  unwrappedResponse = response {
-                        self.miles.backgroundColor = UIColor.blue
+                      //  self.miles.backgroundColor = UIColor.blue
+                        //UIColor(red: 0, green: 0.6039, blue: 0.9294, alpha: 1.0)
+                        self.miles.backgroundColor = UIColor(red: 0, green: 0.851, blue: 0.9294, alpha: 1.0)
         self.showRoute( unwrappedResponse )
                         self.setMapRegion( sourceLocation: self.myLocation!, destinationLocation: officeLocation! )
-                        self.miles.text = "\(unwrappedResponse.routes[0].distance * 0.000621371) miles"
+                        let distance = unwrappedResponse.routes[0].distance * 0.000621371
+                        self.miles.text = "\(Double(round(100*distance)/100)) miles"
                         self.mapView.add(unwrappedResponse.routes[0].polyline)
                       //  var boundingRegion = unwrappedResponse.routes[0].polyline.boundingMapRect
                       //  boundingRegion.size.height = boundingRegion.size.height*1.2
