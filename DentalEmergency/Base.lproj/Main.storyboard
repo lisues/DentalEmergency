@@ -733,7 +733,7 @@
                                             <constraint firstAttribute="height" constant="45" id="k2l-Ek-dwq"/>
                                         </constraints>
                                         <items>
-                                            <navigationItem title="Title" id="g8Q-tE-24z">
+                                            <navigationItem id="g8Q-tE-24z">
                                                 <barButtonItem key="leftBarButtonItem" style="plain" id="Tdf-Yw-EUd">
                                                     <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="PtI-fR-xrc">
                                                         <rect key="frame" x="16" y="8" width="83" height="30"/>
