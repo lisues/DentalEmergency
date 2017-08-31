@@ -101,6 +101,7 @@ class DirectionsViewController: UIViewController, MKMapViewDelegate {
                     if let  unwrappedResponse = response {
                         print("number of routes: \(unwrappedResponse.routes.count)")
                         print("123")
+                        print("check new branch")
                         self.miles.backgroundColor = UIColor(red: 0, green: 0.851, blue: 0.9294, alpha: 1.0)
                         self.showRoute( unwrappedResponse )
                         self.setMapRegion( sourceLocation: self.myLocation!, destinationLocation: officeLocation! )
