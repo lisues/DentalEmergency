@@ -191,7 +191,7 @@ class DirectionsViewController: UIViewController, MKMapViewDelegate {
         for route in response.routes {
   print("-------------------------")
   print("route: \(route)")
-  print("try to create a new branch")
+  print("try to create a new branch ")
             mapView.add(route.polyline,
                          level: MKOverlayLevel.aboveRoads)
             for step in route.steps {
