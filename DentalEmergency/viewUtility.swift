@@ -115,12 +115,13 @@ class practiceViewUtility {
     
     func showActivityIndicator(uiView: UIView) -> UIActivityIndicatorView {
         let actInd: UIActivityIndicatorView = UIActivityIndicatorView()
-        actInd.frame = CGRect(x: 0.0, y: 0.0, width: 120.0, height: 120.0)
+        actInd.frame = CGRect(x: 0.0, y: 0.0, width: 60.0, height: 60.0)
+        let transform: CGAffineTransform = CGAffineTransform(scaleX: 2.5, y: 2.5)
+        actInd.transform = transform
         actInd.center = uiView.center
         actInd.hidesWhenStopped = true
         actInd.activityIndicatorViewStyle =  UIActivityIndicatorViewStyle.gray
-           // UIActivityIndicatorViewStyle.whiteLarge
-        
+    
         return actInd
     }
     
