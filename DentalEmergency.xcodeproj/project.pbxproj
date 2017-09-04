@@ -14,7 +14,6 @@
 		3B0F5E861F2C6A730043C5C3 /* SelectedOfficesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0F5E851F2C6A730043C5C3 /* SelectedOfficesTableViewController.swift */; };
 		3B0F5E881F2C6B140043C5C3 /* DirectionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0F5E871F2C6B140043C5C3 /* DirectionsViewController.swift */; };
 		3B0FFCFF1F33E4C200DC6D26 /* ReviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0FFCFE1F33E4C200DC6D26 /* ReviewTableViewCell.swift */; };
-		3B1455111F52068C00C70AD3 /* RouteDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1455101F52068C00C70AD3 /* RouteDetailsViewController.swift */; };
 		3B1455131F5337CD00C70AD3 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1455121F5337CD00C70AD3 /* TestViewController.swift */; };
 		3B1BDE2F1F48E4E9002BB75C /* Selected.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3B1BDE2D1F48E4E9002BB75C /* Selected.xcdatamodeld */; };
 		3B1BDE321F48E5EC002BB75C /* MySelectedOffices+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1BDE301F48E5EC002BB75C /* MySelectedOffices+CoreDataClass.swift */; };
@@ -60,7 +59,6 @@
 		3B0F5E851F2C6A730043C5C3 /* SelectedOfficesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectedOfficesTableViewController.swift; sourceTree = "<group>"; };
 		3B0F5E871F2C6B140043C5C3 /* DirectionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DirectionsViewController.swift; sourceTree = "<group>"; };
 		3B0FFCFE1F33E4C200DC6D26 /* ReviewTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewTableViewCell.swift; sourceTree = "<group>"; };
-		3B1455101F52068C00C70AD3 /* RouteDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouteDetailsViewController.swift; sourceTree = "<group>"; };
 		3B1455121F5337CD00C70AD3 /* TestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		3B1BDE2E1F48E4E9002BB75C /* Selected.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Selected.xcdatamodel; sourceTree = "<group>"; };
 		3B1BDE301F48E5EC002BB75C /* MySelectedOffices+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; name = "MySelectedOffices+CoreDataClass.swift"; path = "../MySelectedOffices+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -136,7 +134,6 @@
 				3B0FFCFE1F33E4C200DC6D26 /* ReviewTableViewCell.swift */,
 				3B0B22DC1F3CB40100987599 /* SelectedOfficesTableViewCell.swift */,
 				3B0D436C1F40F6B4001E01D1 /* viewControllerConstant.swift */,
-				3B1455101F52068C00C70AD3 /* RouteDetailsViewController.swift */,
 				3B1455121F5337CD00C70AD3 /* TestViewController.swift */,
 			);
 			name = ViewController;
@@ -353,7 +350,6 @@
 				3B0FFCFF1F33E4C200DC6D26 /* ReviewTableViewCell.swift in Sources */,
 				3B0D436D1F40F6B4001E01D1 /* viewControllerConstant.swift in Sources */,
 				3B0F5E841F2C6A100043C5C3 /* ReviewTableViewController.swift in Sources */,
-				3B1455111F52068C00C70AD3 /* RouteDetailsViewController.swift in Sources */,
 				3B0B22DD1F3CB40100987599 /* SelectedOfficesTableViewCell.swift in Sources */,
 				3B4CDF781F22C57D00F84705 /* GoogleSearch.swift in Sources */,
 				3B4CDF761F22B68600F84705 /* PracticeDetailViewController.swift in Sources */,

@@ -25,6 +25,8 @@ class DirectionsViewController: UIViewController, MKMapViewDelegate {
     @IBOutlet weak var miles: UILabel!
     @IBOutlet weak var mapView: MKMapView!
     
+    @IBOutlet weak var routeTitle: UIStackView!
+    @IBOutlet weak var routeOptions: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -98,8 +100,7 @@ class DirectionsViewController: UIViewController, MKMapViewDelegate {
 
                 DispatchQueue.main.async() {
                     if let  unwrappedResponse = response {
-                      //  self.miles.backgroundColor = UIColor.blue
-                        //UIColor(red: 0, green: 0.6039, blue: 0.9294, alpha: 1.0)
+                     
                         self.miles.backgroundColor = UIColor(red: 0, green: 0.851, blue: 0.9294, alpha: 1.0)
         self.showRoute( unwrappedResponse )
                         self.setMapRegion( sourceLocation: self.myLocation!, destinationLocation: officeLocation! )
@@ -121,6 +122,33 @@ class DirectionsViewController: UIViewController, MKMapViewDelegate {
         dismiss(animated: true, completion: nil)
     }
    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+      /*
+        if let fc = fetchedResultsController {
+            return fc.sections![section].numberOfObjects
+        }
+        */
+        return 0
+    }
+    
+    /*
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "selectedOfficeCell", for: indexPath) as! SelectedOfficesTableViewCell
+        
+        if let fc = fetchedResultsController,
+            fc.sections![indexPath.section].numberOfObjects > indexPath.row {
+            let selectedOffice = fetchedResultsController?.object(at: indexPath) as! MySelectedOffices
+            if let myPhoto = selectedOffice.photo {
+                cell.officePhoto.image = UIImage(data: myPhoto as! Data)
+            } else {
+                cell.officePhoto.image = UIImage(named: "default")
+            }
+            cell.officeName.text = "       \(selectedOffice.name)"
+        }
+        
+        return cell
+    }*/
     
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         let reuseId = "pin"
