@@ -9,7 +9,7 @@
 import UIKit
 import MapKit
 
-class DirectionsViewController: UIViewController, MKMapViewDelegate {
+class DirectionsViewController: UIViewController, MKMapViewDelegate, UITableViewDataSource, UITableViewDelegate {
 
     var appDelegate: AppDelegate!
     
@@ -21,8 +21,9 @@ class DirectionsViewController: UIViewController, MKMapViewDelegate {
     
     var activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView()
    
-    
-    @IBOutlet weak var miles: UILabel!
+    @IBOutlet weak var distance: UILabel!
+  //  @IBOutlet weak var miles: UILabel!
+    @IBOutlet weak var routeStepTable: UITableView!
     @IBOutlet weak var mapView: MKMapView!
     
     override func viewDidLoad() {
@@ -30,6 +31,9 @@ class DirectionsViewController: UIViewController, MKMapViewDelegate {
         
         appDelegate = UIApplication.shared.delegate as! AppDelegate
         mapView.delegate = self
+        
+        routeStepTable.dataSource = self
+        routeStepTable.delegate = self
         
         if appDelegate.initialViewDone {
             appDelegate.lastVisitView = ViewControllerEnum.directionView
@@ -98,11 +102,13 @@ class DirectionsViewController: UIViewController, MKMapViewDelegate {
 
                 DispatchQueue.main.async() {
                     if let  unwrappedResponse = response {
-                    self.miles.backgroundColor = UIColor(red: 0, green: 0.851, blue: 0.9294, alpha: 1.0)
+    
+                    //self.miles.backgroundColor = UIColor(red: 0, green: 0.851, blue: 0.9294, alpha: 1.0)
                         self.showRoute( unwrappedResponse )
                         self.setMapRegion( sourceLocation: self.myLocation!, destinationLocation: officeLocation! )
                         let distance = unwrappedResponse.routes[0].distance * 0.000621371
-                        self.miles.text = "\(Double(round(100*distance)/100)) miles"
+                        //self.miles.text = "\(Double(round(100*distance)/100)) miles"
+                        self.distance.text = "\(Double(round(100*distance)/100)) miles"
                         self.mapView.add(unwrappedResponse.routes[0].polyline)
                     }
                 }
@@ -115,6 +121,8 @@ class DirectionsViewController: UIViewController, MKMapViewDelegate {
         dismiss(animated: true, completion: nil)
     }
    
+    @IBAction func routeSteps(_ sender: Any) {
+    }
     
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         let reuseId = "pin"
@@ -150,6 +158,34 @@ class DirectionsViewController: UIViewController, MKMapViewDelegate {
         return renderer
     }
    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        /*
+        if let fc = fetchedResultsController {
+            return fc.sections![section].numberOfObjects
+        }
+        */
+        return 0
+    }
+    
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    
+        let cell = tableView.dequeueReusableCell(withIdentifier: "selectedOfficeCell", for: indexPath) as! SelectedOfficesTableViewCell
+        /*
+        if let fc = fetchedResultsController,
+            fc.sections![indexPath.section].numberOfObjects > indexPath.row {
+            let selectedOffice = fetchedResultsController?.object(at: indexPath) as! MySelectedOffices
+            if let myPhoto = selectedOffice.photo {
+                cell.officePhoto.image = UIImage(data: myPhoto as! Data)
+            } else {
+                cell.officePhoto.image = UIImage(named: "default")
+            }
+            cell.officeName.text = "       \(selectedOffice.name)"
+        }
+      */
+        return cell
+    }
+    
     func converOfficeDataToAnnotation( destinationOffice: SelectedOfficeData? ) -> PracticePinAnnotation? {
         
         var officeLocation = PracticePinAnnotation()
@@ -186,8 +222,9 @@ class DirectionsViewController: UIViewController, MKMapViewDelegate {
             print("route: \(route)")
             mapView.add(route.polyline,
                          level: MKOverlayLevel.aboveRoads)
+            print("---step count: \(route.steps.count)")
             for step in route.steps {
-                print(step.instructions)
+                print("\(step.instructions)       \(step.distance)")
             }
         }
     }
