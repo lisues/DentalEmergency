@@ -159,11 +159,7 @@ class DirectionsViewController: UIViewController, MKMapViewDelegate, UITableView
     }
    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        /*
-        if let fc = fetchedResultsController {
-            return fc.sections![section].numberOfObjects
-        }
-        */
+       
         return 0
     }
     
@@ -171,18 +167,7 @@ class DirectionsViewController: UIViewController, MKMapViewDelegate, UITableView
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     
         let cell = tableView.dequeueReusableCell(withIdentifier: "selectedOfficeCell", for: indexPath) as! SelectedOfficesTableViewCell
-        /*
-        if let fc = fetchedResultsController,
-            fc.sections![indexPath.section].numberOfObjects > indexPath.row {
-            let selectedOffice = fetchedResultsController?.object(at: indexPath) as! MySelectedOffices
-            if let myPhoto = selectedOffice.photo {
-                cell.officePhoto.image = UIImage(data: myPhoto as! Data)
-            } else {
-                cell.officePhoto.image = UIImage(named: "default")
-            }
-            cell.officeName.text = "       \(selectedOffice.name)"
-        }
-      */
+        
         return cell
     }
     
