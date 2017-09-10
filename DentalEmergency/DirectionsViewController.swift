@@ -183,6 +183,7 @@ class DirectionsViewController: UIViewController, MKMapViewDelegate {
 
     func showRoute(_ response: MKDirectionsResponse) {
         for route in response.routes {
+            print("route: \(route)")
             mapView.add(route.polyline,
                          level: MKOverlayLevel.aboveRoads)
             for step in route.steps {
