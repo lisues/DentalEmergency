@@ -21,8 +21,10 @@ class DirectionsViewController: UIViewController, MKMapViewDelegate, UITableView
     
     var activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView()
    
+    var stepDisplay: Bool = false
+    var routeSteps: Int = 0
+    
     @IBOutlet weak var distance: UILabel!
-  //  @IBOutlet weak var miles: UILabel!
     @IBOutlet weak var routeStepTable: UITableView!
     @IBOutlet weak var mapView: MKMapView!
     
@@ -122,7 +124,10 @@ class DirectionsViewController: UIViewController, MKMapViewDelegate, UITableView
     }
    
     @IBAction func routeSteps(_ sender: Any) {
-        routeStepTable.reloadData()
+        if !stepDisplay {
+            routeStepTable.reloadData()
+            stepDisplay = true
+        }
     }
     
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
@@ -160,14 +165,19 @@ class DirectionsViewController: UIViewController, MKMapViewDelegate, UITableView
     }
    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-       
-        return 0
+
+        if stepDisplay {
+            
+        }
+        return 1
     }
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     
-        let cell = tableView.dequeueReusableCell(withIdentifier: "selectedOfficeCell", for: indexPath) as! SelectedOfficesTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "routeSetp", for: indexPath) as! RouteStepsTableViewCell
+        cell.inMile.text = "1.5"
+        cell.directions.text = "testing"
         
         return cell
     }

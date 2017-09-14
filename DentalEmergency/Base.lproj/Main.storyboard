@@ -769,7 +769,7 @@
                                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </state>
                                                         <connections>
-                                                            <action selector="routeSteps:" destination="e75-Eg-abs" eventType="touchDragInside" id="OEZ-qg-Zri"/>
+                                                            <action selector="routeSteps:" destination="e75-Eg-abs" eventType="touchUpInside" id="CdA-QE-qhU"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -782,7 +782,7 @@
                                                 <rect key="frame" x="0.0" y="55" width="375" height="67"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <prototypes>
-                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="m9g-eY-wvW" customClass="RouteStepsTableViewCell" customModule="DentalEmergency" customModuleProvider="target">
+                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="routeSetp" id="m9g-eY-wvW" customClass="RouteStepsTableViewCell" customModule="DentalEmergency" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="m9g-eY-wvW" id="A9c-bZ-1jc">
@@ -843,6 +843,6 @@
         <image name="telephone" width="20" height="20"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="ao5-7x-Yx9"/>
+        <segue reference="uUC-gr-TWW"/>
     </inferredMetricsTieBreakers>
 </document>
