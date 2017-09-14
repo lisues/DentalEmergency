@@ -122,6 +122,7 @@ class DirectionsViewController: UIViewController, MKMapViewDelegate, UITableView
     }
    
     @IBAction func routeSteps(_ sender: Any) {
+        routeStepTable.reloadData()
     }
     
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {

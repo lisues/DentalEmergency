@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3B0364F41F69D15E00B2EAE4 /* RouteStepsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0364F31F69D15E00B2EAE4 /* RouteStepsTableViewCell.swift */; };
 		3B0B22DD1F3CB40100987599 /* SelectedOfficesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0B22DC1F3CB40100987599 /* SelectedOfficesTableViewCell.swift */; };
 		3B0D436D1F40F6B4001E01D1 /* viewControllerConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0D436C1F40F6B4001E01D1 /* viewControllerConstant.swift */; };
 		3B0F5E821F26FB810043C5C3 /* viewUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0F5E811F26FB7E0043C5C3 /* viewUtility.swift */; };
@@ -15,7 +16,6 @@
 		3B0F5E881F2C6B140043C5C3 /* DirectionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0F5E871F2C6B140043C5C3 /* DirectionsViewController.swift */; };
 		3B0FFCFF1F33E4C200DC6D26 /* ReviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0FFCFE1F33E4C200DC6D26 /* ReviewTableViewCell.swift */; };
 		3B1455111F52068C00C70AD3 /* RouteDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1455101F52068C00C70AD3 /* RouteDetailsViewController.swift */; };
-		3B1455131F5337CD00C70AD3 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1455121F5337CD00C70AD3 /* TestViewController.swift */; };
 		3B1BDE2F1F48E4E9002BB75C /* Selected.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3B1BDE2D1F48E4E9002BB75C /* Selected.xcdatamodeld */; };
 		3B1BDE321F48E5EC002BB75C /* MySelectedOffices+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1BDE301F48E5EC002BB75C /* MySelectedOffices+CoreDataClass.swift */; };
 		3B1BDE331F48E5EC002BB75C /* MySelectedOffices+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1BDE311F48E5EC002BB75C /* MySelectedOffices+CoreDataProperties.swift */; };
@@ -53,6 +53,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3B0364F31F69D15E00B2EAE4 /* RouteStepsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouteStepsTableViewCell.swift; sourceTree = "<group>"; };
 		3B0B22DC1F3CB40100987599 /* SelectedOfficesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectedOfficesTableViewCell.swift; sourceTree = "<group>"; };
 		3B0D436C1F40F6B4001E01D1 /* viewControllerConstant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = viewControllerConstant.swift; sourceTree = "<group>"; };
 		3B0F5E811F26FB7E0043C5C3 /* viewUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = viewUtility.swift; sourceTree = "<group>"; };
@@ -61,7 +62,6 @@
 		3B0F5E871F2C6B140043C5C3 /* DirectionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DirectionsViewController.swift; sourceTree = "<group>"; };
 		3B0FFCFE1F33E4C200DC6D26 /* ReviewTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewTableViewCell.swift; sourceTree = "<group>"; };
 		3B1455101F52068C00C70AD3 /* RouteDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouteDetailsViewController.swift; sourceTree = "<group>"; };
-		3B1455121F5337CD00C70AD3 /* TestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		3B1BDE2E1F48E4E9002BB75C /* Selected.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Selected.xcdatamodel; sourceTree = "<group>"; };
 		3B1BDE301F48E5EC002BB75C /* MySelectedOffices+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; name = "MySelectedOffices+CoreDataClass.swift"; path = "../MySelectedOffices+CoreDataClass.swift"; sourceTree = "<group>"; };
 		3B1BDE311F48E5EC002BB75C /* MySelectedOffices+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "MySelectedOffices+CoreDataProperties.swift"; path = "../MySelectedOffices+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -137,7 +137,7 @@
 				3B0B22DC1F3CB40100987599 /* SelectedOfficesTableViewCell.swift */,
 				3B0D436C1F40F6B4001E01D1 /* viewControllerConstant.swift */,
 				3B1455101F52068C00C70AD3 /* RouteDetailsViewController.swift */,
-				3B1455121F5337CD00C70AD3 /* TestViewController.swift */,
+				3B0364F31F69D15E00B2EAE4 /* RouteStepsTableViewCell.swift */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -273,6 +273,7 @@
 				TargetAttributes = {
 					3BF261271F1FCDEF00C9A6D4 = {
 						CreatedOnToolsVersion = 8.2.1;
+						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
 					3BF2613B1F1FCDF100C9A6D4 = {
@@ -346,13 +347,13 @@
 				3B4CDF731F229AF200F84705 /* DataStrcuture.swift in Sources */,
 				3BF2612E1F1FCDF000C9A6D4 /* NearByOfficesViewController.swift in Sources */,
 				3B0F5E881F2C6B140043C5C3 /* DirectionsViewController.swift in Sources */,
-				3B1455131F5337CD00C70AD3 /* TestViewController.swift in Sources */,
 				3B1BDE331F48E5EC002BB75C /* MySelectedOffices+CoreDataProperties.swift in Sources */,
 				3B0F5E861F2C6A730043C5C3 /* SelectedOfficesTableViewController.swift in Sources */,
 				3B1BDE371F49E022002BB75C /* DentalEmergencyCoreData.swift in Sources */,
 				3B0FFCFF1F33E4C200DC6D26 /* ReviewTableViewCell.swift in Sources */,
 				3B0D436D1F40F6B4001E01D1 /* viewControllerConstant.swift in Sources */,
 				3B0F5E841F2C6A100043C5C3 /* ReviewTableViewController.swift in Sources */,
+				3B0364F41F69D15E00B2EAE4 /* RouteStepsTableViewCell.swift in Sources */,
 				3B1455111F52068C00C70AD3 /* RouteDetailsViewController.swift in Sources */,
 				3B0B22DD1F3CB40100987599 /* SelectedOfficesTableViewCell.swift in Sources */,
 				3B4CDF781F22C57D00F84705 /* GoogleSearch.swift in Sources */,
@@ -511,10 +512,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = DentalEmergency/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ddstown.DentalEmergency;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -523,6 +526,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = DentalEmergency/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ddstown.DentalEmergency;

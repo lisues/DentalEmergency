@@ -782,7 +782,7 @@
                                                 <rect key="frame" x="0.0" y="55" width="375" height="67"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <prototypes>
-                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="m9g-eY-wvW">
+                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="m9g-eY-wvW" customClass="RouteStepsTableViewCell" customModule="DentalEmergency" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="m9g-eY-wvW" id="A9c-bZ-1jc">
@@ -805,6 +805,10 @@
                                                                 </label>
                                                             </subviews>
                                                         </tableViewCellContentView>
+                                                        <connections>
+                                                            <outlet property="directions" destination="hKc-3u-NEd" id="yKs-SO-a2u"/>
+                                                            <outlet property="inMile" destination="gXA-NP-JAP" id="t8t-1Z-Jb1"/>
+                                                        </connections>
                                                     </tableViewCell>
                                                 </prototypes>
                                             </tableView>
