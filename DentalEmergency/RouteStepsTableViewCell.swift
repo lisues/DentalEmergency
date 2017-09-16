@@ -10,8 +10,9 @@ import UIKit
 
 class RouteStepsTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var inMile: UILabel!
-    @IBOutlet weak var directions: UILabel!
+    @IBOutlet weak var mile: UILabel!
+
+    @IBOutlet weak var detail: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

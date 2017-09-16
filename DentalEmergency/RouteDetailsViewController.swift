@@ -2,13 +2,18 @@
 //  RouteDetailsViewController.swift
 //  DentalEmergency
 //
-//  Created by Robert Alavi on 8/26/17.
+//  Created by Lisue She on 8/26/17.
 //
 //
 
 import UIKit
 
-class RouteDetailsViewController: UIViewController {
+
+class RouteDetailsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    
+    @IBOutlet weak var routeStepsTable: UITableView!
+    @IBOutlet weak var distance: UILabel!
+    @IBOutlet weak var address: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,14 +29,21 @@ class RouteDetailsViewController: UIViewController {
     func addTempFunctionGitHubProblem() {
         //testing on github activities
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        print("-------at route steps table view - 1 --------")
+        return 0
     }
-    */
+    
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        print("-------at route steps table view - 2 --------")
+        let cell = tableView.dequeueReusableCell(withIdentifier: "routeSetp", for: indexPath) as! RouteStepsTableViewCell
+     //   cell.mile.text = "1.5"
+      //  cell.detail.text = "testing"
+       // cell.de
+        return cell
+    }
+
 
 }
