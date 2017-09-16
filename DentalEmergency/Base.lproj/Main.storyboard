@@ -778,42 +778,8 @@
                                                     <constraint firstAttribute="height" constant="55" id="pqr-rw-dMq"/>
                                                 </constraints>
                                             </view>
-                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="AQu-FV-YVa">
-                                                <rect key="frame" x="0.0" y="55" width="375" height="67"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <prototypes>
-                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="routeSetp" id="m9g-eY-wvW" customClass="RouteStepsTableViewCell" customModule="DentalEmergency" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
-                                                        <autoresizingMask key="autoresizingMask"/>
-                                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="m9g-eY-wvW" id="A9c-bZ-1jc">
-                                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
-                                                            <autoresizingMask key="autoresizingMask"/>
-                                                            <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="inMile" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gXA-NP-JAP">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="92" height="43"/>
-                                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                    <nil key="textColor"/>
-                                                                    <nil key="highlightedColor"/>
-                                                                </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="direction" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hKc-3u-NEd">
-                                                                    <rect key="frame" x="125" y="0.0" width="250" height="35"/>
-                                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                    <nil key="textColor"/>
-                                                                    <nil key="highlightedColor"/>
-                                                                </label>
-                                                            </subviews>
-                                                        </tableViewCellContentView>
-                                                        <connections>
-                                                            <outlet property="directions" destination="hKc-3u-NEd" id="yKs-SO-a2u"/>
-                                                            <outlet property="inMile" destination="gXA-NP-JAP" id="t8t-1Z-Jb1"/>
-                                                        </connections>
-                                                    </tableViewCell>
-                                                </prototypes>
-                                            </tableView>
-                                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="LLN-iL-X7N">
-                                                <rect key="frame" x="0.0" y="122" width="375" height="480"/>
+                                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="LLN-iL-X7N">
+                                                <rect key="frame" x="0.0" y="55" width="375" height="547"/>
                                             </mapView>
                                         </subviews>
                                     </stackView>
@@ -831,7 +797,6 @@
                     <connections>
                         <outlet property="distance" destination="kfl-Of-qFu" id="Fu7-kQ-e3j"/>
                         <outlet property="mapView" destination="LLN-iL-X7N" id="gkL-iJ-Y6i"/>
-                        <outlet property="routeStepTable" destination="AQu-FV-YVa" id="Yze-E3-v31"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Eep-yR-uvq" userLabel="First Responder" sceneMemberID="firstResponder"/>

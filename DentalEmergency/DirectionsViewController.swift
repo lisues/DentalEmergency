@@ -9,7 +9,8 @@
 import UIKit
 import MapKit
 
-class DirectionsViewController: UIViewController, MKMapViewDelegate, UITableViewDataSource, UITableViewDelegate {
+//class DirectionsViewController: UIViewController, MKMapViewDelegate, UITableViewDataSource, UITableViewDelegate {
+class DirectionsViewController: UIViewController, MKMapViewDelegate {
 
     var appDelegate: AppDelegate!
     
@@ -25,7 +26,7 @@ class DirectionsViewController: UIViewController, MKMapViewDelegate, UITableView
     var routeSteps: Int = 0
     
     @IBOutlet weak var distance: UILabel!
-    @IBOutlet weak var routeStepTable: UITableView!
+  //  @IBOutlet weak var routeStepTable: UITableView!
     @IBOutlet weak var mapView: MKMapView!
     
     override func viewDidLoad() {
@@ -34,8 +35,8 @@ class DirectionsViewController: UIViewController, MKMapViewDelegate, UITableView
         appDelegate = UIApplication.shared.delegate as! AppDelegate
         mapView.delegate = self
         
-        routeStepTable.dataSource = self
-        routeStepTable.delegate = self
+  //      routeStepTable.dataSource = self
+  //      routeStepTable.delegate = self
         
         if appDelegate.initialViewDone {
             appDelegate.lastVisitView = ViewControllerEnum.directionView
@@ -124,8 +125,10 @@ class DirectionsViewController: UIViewController, MKMapViewDelegate, UITableView
     }
    
     @IBAction func routeSteps(_ sender: Any) {
+  print("-------at route steps button--------")
         if !stepDisplay {
-            routeStepTable.reloadData()
+print("-------at route steps button: yes--------")
+      //      routeStepTable.reloadData()
             stepDisplay = true
         }
     }
@@ -163,9 +166,9 @@ class DirectionsViewController: UIViewController, MKMapViewDelegate, UITableView
         renderer.lineWidth = 3.0
         return renderer
     }
-   
+   /*
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-
+print("-------at route steps table view - 1 --------")
         if stepDisplay {
             
         }
@@ -174,14 +177,14 @@ class DirectionsViewController: UIViewController, MKMapViewDelegate, UITableView
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    
+print("-------at route steps table view - 2 --------")    
         let cell = tableView.dequeueReusableCell(withIdentifier: "routeSetp", for: indexPath) as! RouteStepsTableViewCell
         cell.inMile.text = "1.5"
         cell.directions.text = "testing"
         
         return cell
     }
-    
+    */
     func converOfficeDataToAnnotation( destinationOffice: SelectedOfficeData? ) -> PracticePinAnnotation? {
         
         var officeLocation = PracticePinAnnotation()
