@@ -3,6 +3,7 @@
 ========================================================================
 
 DESCRIPTION:
+
 DentalEmergency is an iPhone app that helps users find a dentist when they have a dental emergency.  The app searches for dentists near your current location and related dental practices will populate the map with relevant information. You can quickly select an office that meets your needs and call for an immediate appointment and get directions right within the app. 
 
 
@@ -99,6 +100,7 @@ DataModel/MySelectedOffices+CoreDataProperties.swift
 Extension of MySelectedOffices class. 
  
 =========================================================================
+
 CHANGES FROM PREVIOUS VERSION:
 
 
@@ -106,4 +108,5 @@ CHANGES FROM PREVIOUS VERSION:
 
 
 =========================================================================
+
 Copyright © 2017 Apple Inc. All rights reserved
