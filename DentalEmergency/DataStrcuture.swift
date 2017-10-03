@@ -39,6 +39,7 @@ struct SelectedOfficeData {
     var photoReference: String
     var latitude: Double = 0.0
     var longitude: Double = 0.0
+    var officeAddr: String = ""
     
     init (name: String, photo: UIImage?, rating: Float, placeId: String, photoReference: String) {
         self.name = name

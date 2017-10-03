@@ -9,7 +9,7 @@
 import UIKit
 import MapKit
 
-//class DirectionsViewController: UIViewController, MKMapViewDelegate, UITableViewDataSource, UITableViewDelegate {
+
 class DirectionsViewController: UIViewController, MKMapViewDelegate {
 
     var appDelegate: AppDelegate!
@@ -22,12 +22,13 @@ class DirectionsViewController: UIViewController, MKMapViewDelegate {
     
     var activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView()
    
-    var stepDisplay: Bool = false
+    var inMiles: String = ""
     var routeSteps: Int = 0
+    var route: MKRoute?
     
     @IBOutlet weak var distance: UILabel!
-  //  @IBOutlet weak var routeStepTable: UITableView!
     @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var stepsButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,8 +36,7 @@ class DirectionsViewController: UIViewController, MKMapViewDelegate {
         appDelegate = UIApplication.shared.delegate as! AppDelegate
         mapView.delegate = self
         
-  //      routeStepTable.dataSource = self
-  //      routeStepTable.delegate = self
+        stepsButton.isEnabled = false
         
         if appDelegate.initialViewDone {
             appDelegate.lastVisitView = ViewControllerEnum.directionView
@@ -46,7 +46,8 @@ class DirectionsViewController: UIViewController, MKMapViewDelegate {
             myLocation = appDelegate.myLocation
             selectedOffice = appDelegate.selectedOffice
         }
-        
+print("------------------------------------")
+print("office information: \(selectedOffice)")
         activityIndicator = practiceViewUtility.sharedInstance.showActivityIndicator(uiView: view)
         DispatchQueue.main.async {
             self.view.addSubview(self.activityIndicator)
@@ -105,14 +106,14 @@ class DirectionsViewController: UIViewController, MKMapViewDelegate {
 
                 DispatchQueue.main.async() {
                     if let  unwrappedResponse = response {
-    
-                    //self.miles.backgroundColor = UIColor(red: 0, green: 0.851, blue: 0.9294, alpha: 1.0)
                         self.showRoute( unwrappedResponse )
                         self.setMapRegion( sourceLocation: self.myLocation!, destinationLocation: officeLocation! )
                         let distance = unwrappedResponse.routes[0].distance * 0.000621371
-                        //self.miles.text = "\(Double(round(100*distance)/100)) miles"
                         self.distance.text = "\(Double(round(100*distance)/100)) miles"
+                        self.inMiles = self.distance.text!
                         self.mapView.add(unwrappedResponse.routes[0].polyline)
+                        self.route = unwrappedResponse.routes[0]
+                        self.stepsButton.isEnabled = true
                     }
                 }
             }
@@ -125,12 +126,14 @@ class DirectionsViewController: UIViewController, MKMapViewDelegate {
     }
    
     @IBAction func routeSteps(_ sender: Any) {
-  print("-------at route steps button--------")
-        if !stepDisplay {
-print("-------at route steps button: yes--------")
-      //      routeStepTable.reloadData()
-            stepDisplay = true
-        }
+  
+        let steps = self.storyboard!.instantiateViewController(withIdentifier: "RouteDetailsViewController") as! RouteDetailsViewController
+        
+        steps.destAddr = (selectedOffice?.officeAddr)! //"my selected address"
+        steps.miles = inMiles
+        steps.route = route
+        
+        self.present(steps, animated: true, completion: nil)
     }
     
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
@@ -166,25 +169,7 @@ print("-------at route steps button: yes--------")
         renderer.lineWidth = 3.0
         return renderer
     }
-   /*
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-print("-------at route steps table view - 1 --------")
-        if stepDisplay {
-            
-        }
-        return 1
-    }
-    
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-print("-------at route steps table view - 2 --------")    
-        let cell = tableView.dequeueReusableCell(withIdentifier: "routeSetp", for: indexPath) as! RouteStepsTableViewCell
-        cell.inMile.text = "1.5"
-        cell.directions.text = "testing"
-        
-        return cell
-    }
-    */
+   
     func converOfficeDataToAnnotation( destinationOffice: SelectedOfficeData? ) -> PracticePinAnnotation? {
         
         var officeLocation = PracticePinAnnotation()
@@ -217,6 +202,7 @@ print("-------at route steps table view - 2 --------")
     }
 
     func showRoute(_ response: MKDirectionsResponse) {
+       // route = response.routes
         for route in response.routes {
             print("route: \(route)")
             mapView.add(route.polyline,

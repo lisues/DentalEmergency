@@ -55,6 +55,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 photoReference: (UserDefaults.standard.value(forKey: "practicePhotoReference") as? String)! )
             selectedOffice?.latitude = (UserDefaults.standard.value(forKey: "practiceLat") as? Double)!
             selectedOffice?.longitude = (UserDefaults.standard.value(forKey: "practiceLong") as? Double)!
+            if  let officeAddr = (UserDefaults.standard.value(forKey: "practiceAddress") as? String) {
+                selectedOffice?.officeAddr = (UserDefaults.standard.value(forKey: "practiceAddress") as? String)!
+            }
         }
         
         stack?.autoSave(120)
@@ -74,6 +77,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             UserDefaults.standard.set(selectedOffice?.rating, forKey: "practiceRating")
             UserDefaults.standard.set(selectedOffice?.latitude, forKey: "practiceLat")
             UserDefaults.standard.set(selectedOffice?.longitude, forKey: "practiceLong")
+            UserDefaults.standard.set(selectedOffice?.longitude, forKey: "practiceAddress")
         }
         
         stack?.save()

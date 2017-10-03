@@ -109,8 +109,11 @@ class PracticeDetailViewController: UIViewController, CLLocationManagerDelegate 
             }
 
             self.selectedOffice?.photo = self.officePhoto?.image
+//print("**********************************")
+//print("office address: \(self.officeAddress.text!)")
+//self.selectedOffice?.officeAddr = self.officeAddress.text!
             self.appDelegate.selectedOffice = self.selectedOffice
-            
+
             if self.appDelegate.initialViewDone {
                 self.appDelegate.lastVisitView = ViewControllerEnum.practiceView
             } else {
@@ -161,6 +164,9 @@ class PracticeDetailViewController: UIViewController, CLLocationManagerDelegate 
             directions.selectedOffice = selectedOffice
         } else {
             directions.selectedOffice = SelectedOfficeData( selectedOfficeInform: practiceInfo!, photo: officePhoto.image )
+            if let address = officeAddress.text {
+                directions.selectedOffice?.officeAddr = address
+            }
         }
         
         directions.myLocation = myLocation
@@ -237,6 +243,7 @@ class PracticeDetailViewController: UIViewController, CLLocationManagerDelegate 
             if let practice = practice {
                 if let address = practice["formatted_address"] as? String {
                         officeAddr = address
+                        self.selectedOffice?.officeAddr = officeAddr
                 }
                 
                 if let phoneNum = practice["formatted_phone_number"]  as? String {
