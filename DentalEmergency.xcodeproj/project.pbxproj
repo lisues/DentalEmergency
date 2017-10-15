@@ -16,6 +16,7 @@
 		3B0F5E881F2C6B140043C5C3 /* DirectionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0F5E871F2C6B140043C5C3 /* DirectionsViewController.swift */; };
 		3B0FFCFF1F33E4C200DC6D26 /* ReviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0FFCFE1F33E4C200DC6D26 /* ReviewTableViewCell.swift */; };
 		3B1455111F52068C00C70AD3 /* RouteDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1455101F52068C00C70AD3 /* RouteDetailsViewController.swift */; };
+		3B17686D1F930310008EA1C3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B17686C1F930310008EA1C3 /* LaunchScreen.storyboard */; };
 		3B1BDE2F1F48E4E9002BB75C /* Selected.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3B1BDE2D1F48E4E9002BB75C /* Selected.xcdatamodeld */; };
 		3B1BDE321F48E5EC002BB75C /* MySelectedOffices+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1BDE301F48E5EC002BB75C /* MySelectedOffices+CoreDataClass.swift */; };
 		3B1BDE331F48E5EC002BB75C /* MySelectedOffices+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1BDE311F48E5EC002BB75C /* MySelectedOffices+CoreDataProperties.swift */; };
@@ -62,6 +63,7 @@
 		3B0F5E871F2C6B140043C5C3 /* DirectionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DirectionsViewController.swift; sourceTree = "<group>"; };
 		3B0FFCFE1F33E4C200DC6D26 /* ReviewTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewTableViewCell.swift; sourceTree = "<group>"; };
 		3B1455101F52068C00C70AD3 /* RouteDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouteDetailsViewController.swift; sourceTree = "<group>"; };
+		3B17686C1F930310008EA1C3 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3B1BDE2E1F48E4E9002BB75C /* Selected.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Selected.xcdatamodel; sourceTree = "<group>"; };
 		3B1BDE301F48E5EC002BB75C /* MySelectedOffices+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; name = "MySelectedOffices+CoreDataClass.swift"; path = "../MySelectedOffices+CoreDataClass.swift"; sourceTree = "<group>"; };
 		3B1BDE311F48E5EC002BB75C /* MySelectedOffices+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "MySelectedOffices+CoreDataProperties.swift"; path = "../MySelectedOffices+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -202,6 +204,7 @@
 				3BF2615D1F1FF93200C9A6D4 /* NetworkRequest.swift */,
 				3BF2615F1F1FF99100C9A6D4 /* GoogleConstant.swift */,
 				3B4CDF771F22C57C00F84705 /* GoogleSearch.swift */,
+				3B17686C1F930310008EA1C3 /* LaunchScreen.storyboard */,
 			);
 			name = NetworkService;
 			sourceTree = "<group>";
@@ -314,6 +317,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3BF261361F1FCDF000C9A6D4 /* LaunchScreen.storyboard in Resources */,
+				3B17686D1F930310008EA1C3 /* LaunchScreen.storyboard in Resources */,
 				3BF261331F1FCDF000C9A6D4 /* Assets.xcassets in Resources */,
 				3BF261311F1FCDF000C9A6D4 /* Main.storyboard in Resources */,
 			);
