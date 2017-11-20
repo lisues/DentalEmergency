@@ -43,7 +43,5 @@ func convertViewControllerEnumToInt( viewController: ViewControllerEnum ) -> Int
         return 3
     case .directionView:
         return 4
-    default:
-        return 0
     }
 }

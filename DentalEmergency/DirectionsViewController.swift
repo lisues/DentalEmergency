@@ -172,7 +172,8 @@ print("office information: \(selectedOffice)")
    
     func converOfficeDataToAnnotation( destinationOffice: SelectedOfficeData? ) -> PracticePinAnnotation? {
         
-        var officeLocation = PracticePinAnnotation()
+        //var officeLocation = PracticePinAnnotation()
+        let officeLocation = PracticePinAnnotation()
         
         if let office = destinationOffice {
             officeLocation.coordinate.latitude = office.latitude

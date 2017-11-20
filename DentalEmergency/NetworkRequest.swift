@@ -42,8 +42,7 @@ class NetworkRequestAPIs: NSObject {
         }
         
         let tempRequest = request as URLRequest
-        print("request: \(tempRequest)")
-        
+       
         let task = taskNetworkRequest(request as URLRequest)  { (data, error) in
             guard error==nil else {
                 completionHandlerForRequest(nil, error)
@@ -131,7 +130,6 @@ class NetworkRequestAPIs: NSObject {
     }
     
     static let sharedInstance = NetworkRequestAPIs()
-    
 }
 
 

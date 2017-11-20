@@ -4,6 +4,8 @@
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>Access User Location to Determine Closest Practice Nearby</string>
 	<key>CFBundleDisplayName</key>
 	<string>DentalEmergency</string>
 	<key>CFBundleExecutable</key>

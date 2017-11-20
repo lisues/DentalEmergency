@@ -105,13 +105,15 @@ class PracticeDetailViewController: UIViewController, CLLocationManagerDelegate 
             }
             
             if self.selectedOffice == nil {
-                self.selectedOffice = SelectedOfficeData( selectedOfficeInform: self.practiceInfo!, photo: self.officePhoto?.image)
+                DispatchQueue.main.async {
+                    self.selectedOffice = SelectedOfficeData( selectedOfficeInform: self.practiceInfo!, photo: self.officePhoto?.image)
+                }
             }
 
-            self.selectedOffice?.photo = self.officePhoto?.image
-//print("**********************************")
-//print("office address: \(self.officeAddress.text!)")
-//self.selectedOffice?.officeAddr = self.officeAddress.text!
+            DispatchQueue.main.async {
+                self.selectedOffice?.photo = self.officePhoto?.image
+            }
+
             self.appDelegate.selectedOffice = self.selectedOffice
 
             if self.appDelegate.initialViewDone {
@@ -203,11 +205,14 @@ class PracticeDetailViewController: UIViewController, CLLocationManagerDelegate 
             placeId = practiceInfo?.placeId
         }
         
+        if placeId == nil {
+            return placeId
+        }
+        /*
         guard let practiceId = placeId  else {
             print("error: cannot get placeid")
             return placeId
-        }
-        
+        }*/
         return placeId
     }
     
@@ -295,7 +300,6 @@ class PracticeDetailViewController: UIViewController, CLLocationManagerDelegate 
                 DispatchQueue.main.async() {
                     self.activityIndicator.stopAnimating()
                 }
-                print("Practice No Detail Result")
             }
             completionHandlerForGoogleSearchOffices( error )
         }
@@ -303,7 +307,7 @@ class PracticeDetailViewController: UIViewController, CLLocationManagerDelegate 
    
     func displayPracticeBasic(reviews: [AnyObject]?) {
         
-        var isOpen: Bool = false
+       // var isOpen: Bool = false
         var officeRate: Float = 0.0
         
         if fromSelected {
@@ -314,7 +318,7 @@ class PracticeDetailViewController: UIViewController, CLLocationManagerDelegate 
             officeName?.text = practiceInfo?.title
             officeRate = (practiceInfo?.rating)!
             if (practiceInfo?.open)! {
-               isOpen = true
+         //      isOpen = true
             }
         }
         
@@ -343,22 +347,23 @@ class PracticeDetailViewController: UIViewController, CLLocationManagerDelegate 
         officeURL.setTitle(officeWeb, for: .normal)
        
         officeAddress?.text = officeAddr
+        let extraSpace = "       "
         if let officeHrs = officeHrs {
-            mondayTime.text = officeHrs[0]
-            tuesdayTime.text = officeHrs[1]
-            wednesdayTime.text = officeHrs[2]
-            thursdayTime.text = officeHrs[3]
-            fridayTime.text = officeHrs[4]
-            saturdayTime.text = officeHrs[5]
-            sundayTime.text = officeHrs[6]
+            mondayTime.text = extraSpace+officeHrs[0]
+            tuesdayTime.text = extraSpace+officeHrs[1]
+            wednesdayTime.text = extraSpace+officeHrs[2]
+            thursdayTime.text = extraSpace+officeHrs[3]
+            fridayTime.text = extraSpace+officeHrs[4]
+            saturdayTime.text = extraSpace+officeHrs[5]
+            sundayTime.text = extraSpace+officeHrs[6]
         } else {
-            mondayTime.text = "Monday: N/A"
-            tuesdayTime.text = "Tuesday: N/A"
-            wednesdayTime.text = "Wednes day: N/A"
-            thursdayTime.text = "Thursday: N/A"
-            fridayTime.text = "Friday: N/A"
-            saturdayTime.text = "Saturday: N/A"
-            sundayTime.text = "Sunday: N/A"
+            mondayTime.text = extraSpace+"Monday: N/A"
+            tuesdayTime.text = extraSpace+"Tuesday: N/A"
+            wednesdayTime.text = extraSpace+"Wednes day: N/A"
+            thursdayTime.text = extraSpace+"Thursday: N/A"
+            fridayTime.text = extraSpace+"Friday: N/A"
+            saturdayTime.text = extraSpace+"Saturday: N/A"
+            sundayTime.text = extraSpace+"Sunday: N/A"
         }
         
         if let reviews = myReviews {

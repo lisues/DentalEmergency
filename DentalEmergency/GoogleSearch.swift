@@ -40,15 +40,12 @@ class GoogleSearchService: NSObject  {
                             Constants.GoogleServiceParameterValues.MaxWidth as AnyObject,
                           Constants.GoogleServiceParameterKeys.PhotoReference: searchInfo as AnyObject]
             return parameters
-     
-        default:
-           return parameters
         }
     }
     
     func getGoogleServiceAPI( searchType: googleSearchType ) -> String {
         
-        var appDelegate = UIApplication.shared.delegate as! AppDelegate
+       let appDelegate = UIApplication.shared.delegate as! AppDelegate
         
         switch (searchType) {
         case googleSearchType.nearBy:
@@ -63,8 +60,6 @@ class GoogleSearchService: NSObject  {
             return Constants.GoogleService.APIPathDetail
         case googleSearchType.photoReference:
             return Constants.GoogleService.APIPathPhoto
-        default:
-            return Constants.GoogleService.APIPathNearby
         }
     }
     
@@ -87,18 +82,17 @@ class GoogleSearchService: NSObject  {
             let parsedData: [String:AnyObject]!
             do {
                 parsedData = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as! [String:AnyObject]
-               
+               /*
                 for (key,value) in parsedData {
                     print("\(key): \(value)")
                 }
-                
+                */
                 guard let results=parsedData["results"] as? [AnyObject] else {
-                    print("error: 1")
                     completionHandlerForGoogleSearch(nil, nil, error)
                     return
 
                 }
-                print("count of results: \(results.count)")
+                //print("count of results: \(results.count)")
                 var nextPageToken = ""
                 if let nextToken = parsedData["next_page_token"] as? String {
                         nextPageToken = nextToken
@@ -118,19 +112,16 @@ class GoogleSearchService: NSObject  {
     func searchGoogleDentistDetail(searchInfo: String?, searchType: googleSearchType, completionHandlerForGoogleSearch: @escaping (_ practices: [String: AnyObject]?, _ error: NSError? ) -> Void) {
         
         let googleAPI = getGoogleServiceAPI( searchType: searchType )
-        
         let parameters = getSearchParameter( searchInfo: searchInfo, searchType: searchType )
         
         NetworkRequestAPIs.sharedInstance.taskRequest(nil, googleAPI, addHeaderField: nil, setHeaderField: nil, parameters: parameters, jsonBody: nil) { (data, error) in
             
             guard let data=data else {
-                print("Client task request failed")
                 completionHandlerForGoogleSearch(nil, error)
                 return
             }
             
             print("get data, let parse it")
-            
             let parsedData: [String:AnyObject]!
             do {
                 parsedData = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as! [String:AnyObject]

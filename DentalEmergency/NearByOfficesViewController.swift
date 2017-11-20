@@ -44,20 +44,16 @@ class NearByOfficesViewController: UIViewController, MKMapViewDelegate, CLLocati
             locationManager.desiredAccuracy = kCLLocationAccuracyBest
             locationManager.requestAlwaysAuthorization()
             locationManager.startUpdatingLocation()
-        } else {
-            print("Location service disabled");
         }
     }
 
     @IBAction func refreashNextSearch(_ sender: Any) {
         
         if appDelegate.googlePageToken != "" {
-            print("next page token: \(appDelegate.googlePageToken)")
             searchNearByDentists(searchInfo: appDelegate.googlePageToken, searchType:googleSearchType.moreSearch) {
                 return
             }
         } else {
-            print("next page token is not available")
             if mySearchText != "" {
                 searchNearByDentists(searchInfo: mySearchText, searchType:googleSearchType.textSearch) {
                     return
@@ -85,7 +81,6 @@ class NearByOfficesViewController: UIViewController, MKMapViewDelegate, CLLocati
             myAnnotation.here = true
             appDelegate.myLocation = myAnnotation
         } else {
-            print("no location available")
             mySearchText = "USA"
         }
         
@@ -99,7 +94,6 @@ class NearByOfficesViewController: UIViewController, MKMapViewDelegate, CLLocati
     }
 
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        print("error.localizedDescription: \(error)")
         searchNearByDentists(searchInfo: "", searchType:googleSearchType.nearBy) {
             return
         }
@@ -126,7 +120,6 @@ class NearByOfficesViewController: UIViewController, MKMapViewDelegate, CLLocati
     
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         let reuseId = "pin"
-        
         var pinView = mapView.dequeueReusableAnnotationView(withIdentifier: reuseId)
         
         if pinView == nil {
@@ -167,7 +160,6 @@ class NearByOfficesViewController: UIViewController, MKMapViewDelegate, CLLocati
             
             if let detailVC = segue.destination as? PracticeDetailViewController {
                 if let view=sender as? MKAnnotationView, let annotation=view.annotation as?
-                   
                     PracticePinAnnotation {
                         detailVC.practiceInfo = annotation
                         detailVC.myLocation = myAnnotation
@@ -181,16 +173,14 @@ class NearByOfficesViewController: UIViewController, MKMapViewDelegate, CLLocati
         var annotation = PracticePinAnnotation()
         
         guard let practice = practice as? [String:AnyObject] else {
-            print("Cannot get geometry")
             return nil
         }
  
         guard let geometry = practice["geometry"] as? [String:AnyObject] else {
-            print("Cannot get geometry")
             return nil
         }
-        guard let location = geometry["location"] as? AnyObject else {
-            print("*Cannot get location")
+        
+        guard let location = geometry["location"]  else {
             return nil
         }
         
@@ -203,8 +193,7 @@ class NearByOfficesViewController: UIViewController, MKMapViewDelegate, CLLocati
             annotation.title = practiceName
         }
         
-        if let openNow = practice["opening_hours"] as? AnyObject,
-            let open = openNow["open_now"] as? Bool {
+        if let openNow = practice["opening_hours"], let open = openNow["open_now"] as? Bool {
             if open {
                 annotation.open = true
             }
@@ -218,13 +207,10 @@ class NearByOfficesViewController: UIViewController, MKMapViewDelegate, CLLocati
             annotation.placeId = placeId
         }
         
-        if let photos = practice["photos"] {
-            print("photo count: \(photos.count)")
-            for i in 0..<photos.count {
-                let eachPhoto = photos[i] as? [String:AnyObject]
-                if let photoRef = eachPhoto?["photo_reference"] {
-                    annotation.photosReference = photoRef as! String
-                    break
+        if let photos = practice["photos"]  as? [AnyObject]{
+            if let first_photo = photos[0] as? [String:AnyObject] {
+                if let myTest = first_photo["photo_reference"] as? String {
+                    annotation.photosReference = myTest
                 }
             }
         }
@@ -274,7 +260,6 @@ class NearByOfficesViewController: UIViewController, MKMapViewDelegate, CLLocati
         let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: selectedDelta, longitudeDelta: selectedDelta))
     
         self.mapView.setRegion(region, animated: true)
-        print("selctedDltae: \(selectedDelta) - lat: \(midLat) and lng: \(midLng)")
         
         return finalAnnotations
     }
@@ -297,7 +282,6 @@ class NearByOfficesViewController: UIViewController, MKMapViewDelegate, CLLocati
                     self.appDelegate.googlePageToken = nextPageToken
                 }
                 
-                print("number of practices: \(practices.count)")
                 for i in 0..<practices.count {
                     if let annotation = self.getAnnotationForPractice(practice: practices[i]) {
                         annotations.append(annotation)
@@ -313,7 +297,6 @@ class NearByOfficesViewController: UIViewController, MKMapViewDelegate, CLLocati
                 
             } else {
                 if let error = error {
-                    print("error: on search dentist")
                     let userInfo = error.userInfo[NSLocalizedDescriptionKey]
                     let message = userInfo as! String
                     DispatchQueue.main.async {
@@ -321,7 +304,6 @@ class NearByOfficesViewController: UIViewController, MKMapViewDelegate, CLLocati
                        self.present(practiceViewUtility.sharedInstance.errorAlertView(title:"Network Error", message:message), animated: true, completion: nil)
                     }
                 }
-                print("no practices is available")
                 return
             }
             completionHandlerForGoogleNearBySearch()
