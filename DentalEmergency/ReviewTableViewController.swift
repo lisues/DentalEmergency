@@ -113,7 +113,7 @@ class ReviewTableViewController: UIViewController, UITableViewDataSource, UITabl
                 cell?.reviewText.frame.size.width = 205.0
             }
             if self.selectedRowIndex == (indexPath as NSIndexPath).row {
-                cell?.reviewText.frame.size.height = (cell?.reviewText.frame.size.height)!+expenderHeight
+            cell?.reviewText.frame.size.height = (cell?.reviewText.frame.size.height)!+expenderHeight
             } else {
                 cell?.reviewText.frame.size.height = 46 //default reviewText height
             }
@@ -121,25 +121,23 @@ class ReviewTableViewController: UIViewController, UITableViewDataSource, UITabl
         }
  
         if self.selectedRowIndex == (indexPath as NSIndexPath).row {
-            //cell?.backgroundColor = UIColor.lightGray
             cell?.backgroundColor =  UIColor(red: 0.949, green: 0.949, blue: 0.949, alpha: 1.0)
         } else {
             cell?.backgroundColor = UIColor.white
         }
         return cell!
     }
-    
-    func tableView(_ tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        
+   
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         var needHeight: CGFloat = defaultHeight
         let isSmall = practiceViewUtility.sharedInstance.smallScreenSize()
     
         if selectedRowIndex == indexPath.row {
             if let slectedReview = myReviews?[(indexPath as NSIndexPath).row], let textLength = slectedReview["text"] as? String {
                 if isSmall {
-                    needHeight = CGFloat((46*textLength.characters.count) / 55) + 84
+                    needHeight = CGFloat((46*textLength.count) / 55) + 84
                 } else {
-                    needHeight = CGFloat((46*textLength.characters.count) / 60) + 84
+                    needHeight = CGFloat((46*textLength.count) / 60) + 84
                 }
             }
             expenderHeight = needHeight - defaultHeight
@@ -151,7 +149,7 @@ class ReviewTableViewController: UIViewController, UITableViewDataSource, UITabl
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         print(indexPath.row)
-        guard let cell = tableView.cellForRow(at: indexPath) as? ReviewTableViewCell else {
+        guard let _ = tableView.cellForRow(at: indexPath) as? ReviewTableViewCell else {
             return
         }
 
@@ -161,5 +159,4 @@ class ReviewTableViewController: UIViewController, UITableViewDataSource, UITabl
             selectedRowIndex = indexPath.row
         }
         self.reviewsTable.reloadData()
-    }
-}
+    }}

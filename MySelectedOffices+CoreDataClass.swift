@@ -18,7 +18,7 @@ public class MySelectedOffices: NSManagedObject {
             self.init(entity: ent, insertInto: context)
             
             if let officePhoto = photo {
-                self.photo = photo
+                self.photo = officePhoto
             }
             self.name =  name
             self.placeId = placeId

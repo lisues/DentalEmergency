@@ -16,8 +16,7 @@ struct connectionError {
 }
 
 class NetworkRequestAPIs: NSObject {
-    func taskRequest(_ requestType: String?,_ method: String, addHeaderField: [String:String]?, setHeaderField: [String:String]?, parameters: [String:AnyObject], jsonBody: String?, completionHandlerForRequest: @escaping (_ data: Data?, _ error: NSError?) -> Void) -> URLSessionDataTask {
-
+    func taskRequest(_ requestType: String?,_ method: String, addHeaderField: [String:String]?, setHeaderField: [String:String]?, parameters: [String:AnyObject], jsonBody: String?, completionHandlerForRequest: @escaping (_ data: Data?, _ error: NSError?) -> Void) -> Void {
         let urlPath = method+escapedParameters(parameters)
         
         let request = NSMutableURLRequest(url: URL(string:urlPath)!)
@@ -41,9 +40,9 @@ class NetworkRequestAPIs: NSObject {
             request.httpBody = jsonBody.data(using: String.Encoding.utf8)
         }
         
-        let tempRequest = request as URLRequest
+        let _ = request as URLRequest
        
-        let task = taskNetworkRequest(request as URLRequest)  { (data, error) in
+        let _ = taskNetworkRequest(request as URLRequest)  { (data, error) in
             guard error==nil else {
                 completionHandlerForRequest(nil, error)
                 return
@@ -51,12 +50,9 @@ class NetworkRequestAPIs: NSObject {
             completionHandlerForRequest(data, nil)
         }
         
-        return task
     }
-    
-    
+   
     private func taskNetworkRequest(_ request: URLRequest, completionHandlerForNetworkRequest: @escaping (_ data: Data?, _ error: NSError?) -> Void) -> URLSessionDataTask {
-        
         let session = URLSession.shared
         let task = session.dataTask(with: request as URLRequest) { data, response, error in
             func sendError(_ error: String,_ errorCode: Int) {

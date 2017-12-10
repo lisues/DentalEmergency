@@ -44,9 +44,8 @@ class GoogleSearchService: NSObject  {
     }
     
     func getGoogleServiceAPI( searchType: googleSearchType ) -> String {
-        
        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        
+       
         switch (searchType) {
         case googleSearchType.nearBy:
             appDelegate.googleSearchApi = Constants.GoogleService.APIPathNearby

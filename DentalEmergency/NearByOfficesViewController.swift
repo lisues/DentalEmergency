@@ -100,7 +100,7 @@ class NearByOfficesViewController: UIViewController, MKMapViewDelegate, CLLocati
     }
     
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
-        searchBar.text=""
+         searchBar.text=""
     }
    
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
@@ -108,7 +108,7 @@ class NearByOfficesViewController: UIViewController, MKMapViewDelegate, CLLocati
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        if (searchBar.text?.characters.count)! > 0 {
+        if (searchBar.text?.count)! > 0 {
             mySearchText = searchBar.text!
             searchBar.placeholder = mySearchText
             searchBar.text = ""
@@ -170,7 +170,7 @@ class NearByOfficesViewController: UIViewController, MKMapViewDelegate, CLLocati
     
     func getAnnotationForPractice(practice: AnyObject)->PracticePinAnnotation? {
         
-        var annotation = PracticePinAnnotation()
+        let annotation = PracticePinAnnotation()
         
         guard let practice = practice as? [String:AnyObject] else {
             return nil
@@ -296,7 +296,7 @@ class NearByOfficesViewController: UIViewController, MKMapViewDelegate, CLLocati
                 }
                 
             } else {
-                if let error = error {
+                if let error = error as NSError? {
                     let userInfo = error.userInfo[NSLocalizedDescriptionKey]
                     let message = userInfo as! String
                     DispatchQueue.main.async {

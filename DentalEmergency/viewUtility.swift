@@ -61,7 +61,7 @@ class practiceViewUtility {
         
         let officePhoto = UIImagePNGRepresentation(selectedOfficeInform.photo!)! as Data
         
-        let myOffice = MySelectedOffices(photo: officePhoto as NSData?, name: selectedOfficeInform.name, placeId: selectedOfficeInform.placeId, photoReference: selectedOfficeInform.photoReference, rating: selectedOfficeInform.rating, latitude: selectedOfficeInform.latitude, longitude: selectedOfficeInform.longitude, context: stack.context)
+        let _ = MySelectedOffices(photo: officePhoto as NSData?, name: selectedOfficeInform.name, placeId: selectedOfficeInform.placeId, photoReference: selectedOfficeInform.photoReference, rating: selectedOfficeInform.rating, latitude: selectedOfficeInform.latitude, longitude: selectedOfficeInform.longitude, context: stack.context)
         
         stack.save()
 
@@ -92,8 +92,9 @@ class practiceViewUtility {
     func convertCoreDataToDataStructure( office: MySelectedOffices ) -> SelectedOfficeData {
         
         var selectedImage: UIImage
-        if let officePhoto = office.photo {
-            selectedImage = UIImage(data: office.photo as! Data)!
+        if let officePhoto = office.photo as Data? {
+            //selectedImage = UIImage(data: office.photo as! Data)!
+            selectedImage = UIImage(data: officePhoto)!
         } else {
             selectedImage = UIImage(named: "default")!
         }
@@ -128,8 +129,7 @@ class practiceViewUtility {
     func smallScreenSize() -> Bool {
         let screenSize: CGRect = UIScreen.main.bounds
         let screenWidth = screenSize.width
-        let screenHeight = screenSize.height
-
+    
         if screenWidth < 400 {
             return true
         } else {

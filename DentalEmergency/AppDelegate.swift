@@ -56,7 +56,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             selectedOffice?.latitude = (UserDefaults.standard.value(forKey: "practiceLat") as? Double)!
             selectedOffice?.longitude = (UserDefaults.standard.value(forKey: "practiceLong") as? Double)!
             if  let officeAddr = (UserDefaults.standard.value(forKey: "practiceAddress") as? String) {
-                selectedOffice?.officeAddr = (UserDefaults.standard.value(forKey: "practiceAddress") as? String)!
+               // selectedOffice?.officeAddr = (UserDefaults.standard.value(forKey: "practiceAddress") as? String)!
+                selectedOffice?.officeAddr = officeAddr
             }
         }
         
@@ -69,7 +70,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let myView: Int = convertViewControllerEnumToInt( viewController: lastVisitView )
         UserDefaults.standard.set(myView, forKey: "lastVisitView")
-        let tempView = UserDefaults.standard.value(forKey: "lastVisitView")
+        let _ = UserDefaults.standard.value(forKey: "lastVisitView")
         if  !(lastVisitView == ViewControllerEnum.startView) {
             UserDefaults.standard.set(selectedOffice?.name, forKey: "practiceName")
             UserDefaults.standard.set(selectedOffice?.placeId, forKey: "practicePlaceId")

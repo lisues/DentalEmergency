@@ -60,7 +60,7 @@ class PracticeDetailViewController: UIViewController, CLLocationManagerDelegate 
     var selectedOfficeIndex: IndexPath?
     
     var activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView()
-    
+   
     override func viewDidLoad() {
         
         super.viewDidLoad()
@@ -95,7 +95,6 @@ class PracticeDetailViewController: UIViewController, CLLocationManagerDelegate 
         googleSearchOfficeDetail(practiceId: placeId) { (error) in
             
             if let error = error {
-                print("Network Error")
                 let userInfo = error.userInfo[NSLocalizedDescriptionKey]
                 let message = userInfo as! String
                 DispatchQueue.main.async {
@@ -219,15 +218,13 @@ class PracticeDetailViewController: UIViewController, CLLocationManagerDelegate 
     func callOffice() {
         
         if let phoneNum = officePhone.titleLabel?.text {
-            let callNumber = "1"+String(phoneNum.characters.filter { "01234567890.".characters.contains($0) })
-            //if let url = URL(string: "tel://\(callNumber)") {
+           // let callNumber = "1"+String(phoneNum.characters.filter { "01234567890.".characters.contains($0) })
+            let callNumber = "1"+String(phoneNum.filter { "01234567890.".contains($0) })
             if let url = URL(string: "tel:\(callNumber)") {
                  if (UIApplication.shared.canOpenURL(url)) {
                      UIApplication.shared.open(url)
-                 } else {
                 }
             }
-        } else {
         }
     }
     
@@ -287,7 +284,7 @@ class PracticeDetailViewController: UIViewController, CLLocationManagerDelegate 
 
                         if let imageData = data {
                             DispatchQueue.main.async(){
-                                self.officePhoto?.image = UIImage(data: imageData as! Data)
+                                self.officePhoto?.image = UIImage(data: imageData)
                                 self.selectedOffice?.photo = self.officePhoto?.image
                                 self.appDelegate.selectedOffice = self.selectedOffice
                             }
@@ -382,7 +379,7 @@ class PracticeDetailViewController: UIViewController, CLLocationManagerDelegate 
         if !isSmall {
             let newHight: CGFloat = 175.0
             let newWidth: CGFloat = (officePhoto?.frame.width)!
-            print("new size: \(officePhoto?.frame.size)")
+           // print("new size: \(officePhoto?.frame.size)")
         
             officePhoto?.frame.size.width = newWidth
             officePhoto?.frame.size.height = newHight

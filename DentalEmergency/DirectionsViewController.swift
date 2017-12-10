@@ -46,8 +46,7 @@ class DirectionsViewController: UIViewController, MKMapViewDelegate {
             myLocation = appDelegate.myLocation
             selectedOffice = appDelegate.selectedOffice
         }
-print("------------------------------------")
-print("office information: \(selectedOffice)")
+
         activityIndicator = practiceViewUtility.sharedInstance.showActivityIndicator(uiView: view)
         DispatchQueue.main.async {
             self.view.addSubview(self.activityIndicator)
@@ -60,7 +59,7 @@ print("office information: \(selectedOffice)")
             self.myLocation = appDelegate.myLocation
         }
         
-        guard let sourceLocation = myLocation else {
+        guard let _ = myLocation else {
             DispatchQueue.main.async() {
                 self.activityIndicator.stopAnimating()
             }
@@ -92,7 +91,8 @@ print("office information: \(selectedOffice)")
             
         directions.calculate(completionHandler: {(response, error) in
             
-            if let error = error as? NSError {
+            //if let error = error as? NSError {
+            if let error = error as NSError? {
                 print("Error on network")
                 let userInfo = error.userInfo[NSLocalizedDescriptionKey]
                 let message = userInfo as! String

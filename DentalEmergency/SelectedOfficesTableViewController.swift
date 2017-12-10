@@ -64,11 +64,13 @@ class SelectedOfficesTableViewController: UIViewController, UITableViewDataSourc
             fc.sections![indexPath.section].numberOfObjects > indexPath.row {
             let selectedOffice = fetchedResultsController?.object(at: indexPath) as! MySelectedOffices
             if let myPhoto = selectedOffice.photo {
-                cell.officePhoto.image = UIImage(data: myPhoto as! Data)
+                cell.officePhoto.image = UIImage(data: myPhoto as Data)
             } else {
                 cell.officePhoto.image = UIImage(named: "default")
             }
-            cell.officeName.text = "       \(selectedOffice.name)"
+            if let officeInfo = selectedOffice.name {
+                cell.officeName.text = "       \(officeInfo)"
+            }
         }
        
         return cell
