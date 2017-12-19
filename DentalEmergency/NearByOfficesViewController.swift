@@ -49,16 +49,24 @@ class NearByOfficesViewController: UIViewController, MKMapViewDelegate, CLLocati
 
     @IBAction func refreashNextSearch(_ sender: Any) {
         
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        
         if appDelegate.googlePageToken != "" {
-            searchNearByDentists(searchInfo: appDelegate.googlePageToken, searchType:googleSearchType.moreSearch) {
+            var mySearchType = googleSearchType.moreNearBySearch
+            if appDelegate.googleSearchApi == Constants.GoogleService.APIPathQuery {
+                    mySearchType = googleSearchType.moreQuerySearch
+            }
+            searchNearByDentists(searchInfo: appDelegate.googlePageToken, searchType:mySearchType) {
                 return
             }
         } else {
             if mySearchText != "" {
+                appDelegate.googleSearchApi = Constants.GoogleService.APIPathQuery
                 searchNearByDentists(searchInfo: mySearchText, searchType:googleSearchType.textSearch) {
                     return
                 }
             } else {
+                appDelegate.googleSearchApi = Constants.GoogleService.APIPathNearby
                 searchNearByDentists(searchInfo: searchLocation, searchType:googleSearchType.nearBy) {
                     return
                 }
@@ -94,7 +102,12 @@ class NearByOfficesViewController: UIViewController, MKMapViewDelegate, CLLocati
     }
 
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        searchNearByDentists(searchInfo: "", searchType:googleSearchType.nearBy) {
+        
+        myAnnotation.coordinate = CLLocationCoordinate2D(latitude: 37.7749, longitude: -122.4194)
+        myAnnotation.title = "San Francisco"
+        myAnnotation.here = true
+        appDelegate.myLocation = myAnnotation
+        searchNearByDentists(searchInfo: "37.7749, -122.4194", searchType:googleSearchType.nearBy) {
             return
         }
     }
@@ -108,6 +121,7 @@ class NearByOfficesViewController: UIViewController, MKMapViewDelegate, CLLocati
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        self.view.endEditing(true)
         if (searchBar.text?.count)! > 0 {
             mySearchText = searchBar.text!
             searchBar.placeholder = mySearchText

@@ -25,7 +25,7 @@ class GoogleSearchService: NSObject  {
         case googleSearchType.textSearch:
             parameters[Constants.GoogleServiceParameterKeys.Query] = searchInfo as AnyObject
             return parameters
-        case googleSearchType.moreSearch:
+        case googleSearchType.moreNearBySearch, googleSearchType.moreQuerySearch:
             parameters[Constants.GoogleServiceParameterKeys.PageToken] = searchInfo as AnyObject
             return parameters
         case googleSearchType.detailSearch:
@@ -44,17 +44,16 @@ class GoogleSearchService: NSObject  {
     }
     
     func getGoogleServiceAPI( searchType: googleSearchType ) -> String {
-       let appDelegate = UIApplication.shared.delegate as! AppDelegate
-       
+        
         switch (searchType) {
         case googleSearchType.nearBy:
-            appDelegate.googleSearchApi = Constants.GoogleService.APIPathNearby
             return Constants.GoogleService.APIPathNearby
         case googleSearchType.textSearch:
-            appDelegate.googleSearchApi = Constants.GoogleService.APIPathQuery
             return Constants.GoogleService.APIPathQuery
-        case googleSearchType.moreSearch:
-            return appDelegate.googleSearchApi
+        case googleSearchType.moreNearBySearch:
+            return Constants.GoogleService.APIPathNearby
+        case googleSearchType.moreQuerySearch:
+            return Constants.GoogleService.APIPathQuery
         case googleSearchType.detailSearch:
             return Constants.GoogleService.APIPathDetail
         case googleSearchType.photoReference:

@@ -56,7 +56,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             selectedOffice?.latitude = (UserDefaults.standard.value(forKey: "practiceLat") as? Double)!
             selectedOffice?.longitude = (UserDefaults.standard.value(forKey: "practiceLong") as? Double)!
             if  let officeAddr = (UserDefaults.standard.value(forKey: "practiceAddress") as? String) {
-               // selectedOffice?.officeAddr = (UserDefaults.standard.value(forKey: "practiceAddress") as? String)!
                 selectedOffice?.officeAddr = officeAddr
             }
         }

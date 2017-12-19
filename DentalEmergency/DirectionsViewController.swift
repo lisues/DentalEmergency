@@ -47,8 +47,8 @@ class DirectionsViewController: UIViewController, MKMapViewDelegate {
             selectedOffice = appDelegate.selectedOffice
         }
 
-        activityIndicator = practiceViewUtility.sharedInstance.showActivityIndicator(uiView: view)
         DispatchQueue.main.async {
+            self.activityIndicator = practiceViewUtility.sharedInstance.showActivityIndicator(uiView: self.view)
             self.view.addSubview(self.activityIndicator)
             self.activityIndicator.startAnimating()
         }

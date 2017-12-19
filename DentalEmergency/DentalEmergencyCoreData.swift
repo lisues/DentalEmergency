@@ -10,7 +10,7 @@ import Foundation
 import CoreData
 
 enum EntityType {
-    case selectedOffice, textSearch, moreSearch, detailSearch, photoReference
+    case selectedOffice, textSearch, detailSearch, photoReference
 }
 
 

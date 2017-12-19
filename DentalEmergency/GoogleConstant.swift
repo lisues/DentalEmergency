@@ -8,10 +8,15 @@
 
 import Foundation
 
+//moreNearBySearch
+enum googleSearchType {
+    case nearBy, textSearch, moreNearBySearch, moreQuerySearch, detailSearch, photoReference
+}
 
+/*
 enum googleSearchType {
     case nearBy, textSearch, moreSearch, detailSearch, photoReference
-}
+}*/
 
 struct Constants {
     
